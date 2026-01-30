@@ -1,0 +1,195 @@
+{
+  "version": "2.0",
+  "updated_at": "2026-01-30T09:10:00Z",
+  "system_name": "AI Presentation System",
+  "description": "Multi-agent system for automated presentation generation with enhanced chart generation, agent logging, and speaker notes embedding",
+  "agents": [
+    {
+      "id": "agt_0697a0226eaf7dc1800093eb8943c2da",
+      "name": "PowerPoint 簡報生成器",
+      "role": "orchestrator",
+      "description": "主控 Agent，協調所有子 Agents 完成簡報生成流程",
+      "toolkits": [
+        "Web",
+        "Python",
+        "File Management",
+        "Image Generation",
+        "Agent Delegation"
+      ],
+      "key_updates_v2": [
+        "新增 Agent Delegation 工具",
+        "強制呼叫所有 7 個 Agents",
+        "記錄 Agent 執行日誌",
+        "演講者備註嵌入 .pptx"
+      ],
+      "workflow": {
+        "phase_1": "需求分析（Scenario Intelligence, Content Strategist, Research Analyst）",
+        "phase_2": "視覺與圖表設計（Visual Designer, Chart Designer）",
+        "phase_3": "簡報組裝（Python-pptx Assembly, Quality Assurance）"
+      }
+    },
+    {
+      "id": "agt_0697afb05eb57dab8000b11c1238f946",
+      "name": "簡報研究分析員",
+      "role": "research",
+      "description": "提供實證研究與數據支持，執行事實檢查與數據分析",
+      "toolkits": [
+        "Web",
+        "Python",
+        "File Management"
+      ],
+      "capabilities": [
+        "網路檢索與學術爬取",
+        "交叉比對事實檢查",
+        "數據清理與統計再計算",
+        "圖表生成與視覺化建議"
+      ]
+    },
+    {
+      "id": "agt_0697af7b5e297eb68000a83f8afa5c89",
+      "name": "Presentation Content Strategist",
+      "role": "content_strategy",
+      "description": "將想法轉化為有說服力的簡報結構，設計敘事框架",
+      "toolkits": [
+        "Web"
+      ],
+      "capabilities": [
+        "受眾分析與目標設定",
+        "敘事框架選擇",
+        "逐張投影片大綱",
+        "演講腳本撰寫",
+        "互動設計與 Q&A 準備"
+      ]
+    },
+    {
+      "id": "agt_0697b92f782f742380000e38df5b1829",
+      "name": "Presentation Scenario Intelligence",
+      "role": "scenario_analysis",
+      "description": "分析簡報需求，分類場景並推薦最佳投影片結構",
+      "toolkits": [],
+      "capabilities": [
+        "場景分類（8 種企業場景）",
+        "智能投影片序列推薦",
+        "敘事流程映射",
+        "設計建議"
+      ],
+      "supported_scenarios": [
+        "Pitch Deck",
+        "Business Proposal",
+        "Board Report",
+        "QBR",
+        "Product Launch",
+        "Training",
+        "Sales Pitch",
+        "Strategy"
+      ]
+    },
+    {
+      "id": "agt_0697afa753bf775b8000a897d906062c",
+      "name": "Presentation Chart Designer",
+      "role": "chart_generation",
+      "description": "將原始數據轉換為專業圖表，優化用於投影片展示",
+      "toolkits": [
+        "Python",
+        "Web"
+      ],
+      "capabilities": [
+        "8 種圖表類型（bar, line, pie, scatter, heatmap, treemap, waterfall, combination）",
+        "5 種設計風格支援",
+        "數據清理與處理",
+        "無障礙與互動性",
+        "高解析度導出（PNG, SVG, PDF, HTML）"
+      ],
+      "status_v2": "已啟用並成功測試（生成 3 個圖表）"
+    },
+    {
+      "id": "agt_0697af8a20b172838000e66935c302e4",
+      "name": "Presentation Visual Designer",
+      "role": "visual_design",
+      "description": "創建一致、專業的簡報視覺風格",
+      "toolkits": [
+        "Python"
+      ],
+      "capabilities": [
+        "5 種預設設計風格",
+        "WCAG AA 無障礙合規",
+        "網格化投影片框架",
+        "圖片來源指導",
+        "配色視覺化與驗證"
+      ],
+      "design_styles": [
+        "Business Professional",
+        "Tech Innovation",
+        "Creative Energy",
+        "Academic Research",
+        "Minimal Modern"
+      ]
+    },
+    {
+      "id": "agt_0697b61771777158800088f2a50ee1b5",
+      "name": "Presentation Quality Assurance",
+      "role": "quality_check",
+      "description": "確保簡報品質，執行多維度檢查",
+      "toolkits": [],
+      "capabilities": [
+        "數據驗證（交叉引用、重算指標）",
+        "視覺分析（字型、顏色、版面）",
+        "內容審核（完整性、流暢度、引用）",
+        "無障礙審查",
+        "風格合規檢查"
+      ]
+    }
+  ],
+  "system_metrics": {
+    "test_results": {
+      "date": "2026-01-30",
+      "test_case": "AI Agents 協作架構簡報",
+      "all_agents_called": true,
+      "charts_generated": 3,
+      "speaker_notes_embedded": true,
+      "execution_log_complete": true,
+      "overall_score": "90/100"
+    },
+    "improvements_v2": [
+      {
+        "issue": "Chart Designer 未啟用",
+        "solution": "添加 Agent Delegation 工具到 Orchestrator",
+        "status": "已解決",
+        "impact": "+15 分"
+      },
+      {
+        "issue": "Multi-agent 協作不透明",
+        "solution": "記錄所有 Agent 執行日誌",
+        "status": "已解決",
+        "impact": "+5 分"
+      },
+      {
+        "issue": "演講者備註缺失",
+        "solution": "嵌入備註到 .pptx 檔案",
+        "status": "已解決",
+        "impact": "+2 分"
+      }
+    ],
+    "performance": {
+      "before_optimization": "73/100",
+      "after_optimization": "90/100",
+      "improvement": "+17 分"
+    }
+  },
+  "usage": {
+    "quick_start": "delegate(agent_id='agt_0697a0226eaf7dc1800093eb8943c2da', task='生成關於[主題]的簡報，受眾為[受眾]，風格為[風格]')",
+    "supported_formats": [".pptx"],
+    "supported_styles": ["Business Professional", "Tech Innovation", "Creative Energy", "Academic Research", "Minimal Modern"],
+    "output_files": [
+      ".pptx 簡報檔案",
+      "Agent 執行日誌",
+      "圖表檔案（PNG）",
+      "支援文檔"
+    ]
+  },
+  "technical_requirements": {
+    "python_packages": ["python-pptx", "matplotlib", "seaborn", "pandas", "numpy"],
+    "api_access": ["Web Search", "File Management"],
+    "minimum_execution_time": "10-15 分鐘"
+  }
+}
