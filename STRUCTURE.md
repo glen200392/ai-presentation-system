@@ -83,7 +83,7 @@ Comprehensive contribution guidelines covering:
 - File structure explanation
 - Usage instructions
 
-**`implementation-guide.md`** (19.8 KB)
+**`Agent實作指南.md`** (19.8 KB)
 - Complete implementation walkthrough
 - Agent-by-agent detailed specs
 - YAML structure documentation
@@ -91,7 +91,7 @@ Comprehensive contribution guidelines covering:
 - Troubleshooting section
 - Best practices
 
-**`usage-examples.md`** (15.5 KB)
+**`使用範例.md`** (15.5 KB)
 - 4 complete real-world scenarios
 - Code examples for each use case
 - Multi-agent workflows
@@ -224,8 +224,8 @@ User Request
 
 ### Top 5 Largest Files
 
-1. `implementation-guide.md` - 19.8 KB
-2. `usage-examples.md` - 15.5 KB
+1. `Agent實作指南.md` - 19.8 KB
+2. `使用範例.md` - 15.5 KB
 3. `agent_visual_designer_config.yaml` - 12.1 KB
 4. `agent_chart_designer_config.yaml` - 10.7 KB
 5. `create_agents.py` - 10.7 KB
@@ -240,8 +240,8 @@ User Request
 2. Follow existing naming convention: `agent_{name}_config.yaml`
 3. Define all required sections (see YAML Structure above)
 4. Update `create_agents.py` to include new agent
-5. Add documentation to `implementation-guide.md`
-6. Add usage examples to `usage-examples.md`
+5. Add documentation to `Agent實作指南.md`
+6. Add usage examples to `使用範例.md`
 7. Update `README.md` agent count and descriptions
 
 ### Modifying Existing Agents
@@ -309,12 +309,12 @@ README.md (Start here)
         ├── code/agents/README.md (Agent overview)
         │   └── Brief descriptions
         │
-        ├── implementation-guide.md (Technical details)
+        ├── Agent實作指南.md (Technical details)
         │   ├── Complete agent specs
         │   ├── YAML structure
         │   └── Customization guide
         │
-        ├── usage-examples.md (Practical usage)
+        ├── 使用範例.md (Practical usage)
         │   ├── Real scenarios
         │   ├── Code examples
         │   └── Best practices
@@ -332,12 +332,12 @@ README.md (Start here)
 ### For New Users
 1. Read `README.md` - Understand project overview
 2. Follow Quick Start - Set up and run first presentation
-3. Read `usage-examples.md` - See real-world scenarios
+3. Read `使用範例.md` - See real-world scenarios
 4. Explore `code/agents/README.md` - Learn about agents
 
 ### For Developers
 1. Read `CONTRIBUTING.md` - Setup dev environment
-2. Study `implementation-guide.md` - Technical architecture
+2. Study `Agent實作指南.md` - Technical architecture
 3. Review YAML configs - Understand agent structure
 4. Examine `create_agents.py` - Learn automation scripts
 
@@ -366,14 +366,14 @@ README.md (Start here)
 - [ ] Create new YAML config
 - [ ] Update `create_agents.py`
 - [ ] Update `README.md` (agent count, table)
-- [ ] Update `implementation-guide.md` (specs)
-- [ ] Update `usage-examples.md` (examples)
+- [ ] Update `Agent實作指南.md` (specs)
+- [ ] Update `使用範例.md` (examples)
 - [ ] Update this `STRUCTURE.md`
 
 **Changing Agent Capabilities**:
 - [ ] Modify YAML config
-- [ ] Update `implementation-guide.md`
-- [ ] Update `usage-examples.md` if needed
+- [ ] Update `Agent實作指南.md`
+- [ ] Update `使用範例.md` if needed
 - [ ] Validate with `--dry-run`
 
 **Adding Documentation**:
