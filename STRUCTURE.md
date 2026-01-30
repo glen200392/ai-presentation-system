@@ -16,8 +16,8 @@ ai-presentation-system/
 └── code/
     └── agents/                         # AI Agent configurations
         ├── README.md                   # Agent overview (6.9 KB)
-        ├── implementation-guide.md     # Complete implementation guide (19.8 KB)
-        ├── usage-examples.md           # Real-world usage scenarios (15.5 KB)
+        ├── Agent實作指南.md             # Complete implementation guide (19.8 KB)
+        ├── 使用範例.md                   # Real-world usage scenarios (15.5 KB)
         ├── create_agents.py            # Batch agent creation script (10.7 KB)
         │
         ├── agent_orchestrator_config.yaml              # Main coordinator (4.4 KB)
