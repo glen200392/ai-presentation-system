@@ -1,0 +1,451 @@
+# Presentation Visual Designer Agent
+# Agent ID: agt_0697af8a20b172838000e66935c302e4
+
+agent_metadata:
+  name: "Presentation Visual Designer"
+  version: "1.0.0"
+  type: "designer"
+  role: "視覺設計與風格指南"
+  description: |
+    專門簡化一致性、品牌化簡報視覺創建的 AI 專家。
+    讓非設計師也能產出專業、無障礙的投影片設計。
+
+design_styles:
+  business_professional:
+    name: "商務專業"
+    formality: "正式"
+    use_cases:
+      - "董事會報告"
+      - "投資者簡報"
+      - "季度業務審查"
+      - "企業提案"
+    color_palette:
+      primary: 
+        hex: "#1e3a8a"
+        rgb: "30, 58, 138"
+        cmyk: "78, 58, 0, 46"
+      secondary:
+        hex: "#64748b"
+        rgb: "100, 116, 139"
+        cmyk: "28, 17, 0, 45"
+      accent:
+        hex: "#3b82f6"
+        rgb: "59, 130, 246"
+        cmyk: "76, 47, 0, 4"
+      background:
+        hex: "#ffffff"
+      text_primary:
+        hex: "#1e293b"
+      text_secondary:
+        hex: "#475569"
+    typography:
+      title_font: "Arial Bold"
+      body_font: "Arial"
+      code_font: "Courier New"
+      hierarchy:
+        h1: "44pt, Bold"
+        h2: "32pt, Bold"
+        h3: "24pt, SemiBold"
+        body: "18pt, Regular"
+        caption: "14pt, Regular"
+    grid_layout:
+      margins: "0.5in all sides"
+      columns: 12
+      gutter: "0.2in"
+    
+  tech_innovation:
+    name: "科技創新"
+    formality: "半正式"
+    use_cases:
+      - "產品發表"
+      - "技術簡報"
+      - "創業提案"
+      - "科技會議"
+    color_palette:
+      primary:
+        hex: "#0ea5e9"
+        rgb: "14, 165, 233"
+        cmyk: "94, 29, 0, 9"
+      secondary:
+        hex: "#06b6d4"
+        rgb: "6, 182, 212"
+        cmyk: "97, 14, 0, 17"
+      accent:
+        hex: "#10b981"
+        rgb: "16, 185, 129"
+        cmyk: "91, 0, 30, 27"
+      background:
+        hex: "#0f172a"
+      text_primary:
+        hex: "#f1f5f9"
+      text_secondary:
+        hex: "#cbd5e1"
+    typography:
+      title_font: "Roboto Bold"
+      body_font: "Open Sans"
+      code_font: "Fira Code"
+      hierarchy:
+        h1: "48pt, Bold"
+        h2: "36pt, Bold"
+        h3: "28pt, SemiBold"
+        body: "20pt, Regular"
+        caption: "16pt, Regular"
+    grid_layout:
+      margins: "0.4in all sides"
+      columns: 12
+      gutter: "0.15in"
+    
+  creative_energy:
+    name: "創意活力"
+    formality: "輕鬆"
+    use_cases:
+      - "創意簡報"
+      - "行銷企劃"
+      - "品牌發表"
+      - "設計展示"
+    color_palette:
+      primary:
+        hex: "#ec4899"
+        rgb: "236, 72, 153"
+        cmyk: "0, 69, 35, 7"
+      secondary:
+        hex: "#f59e0b"
+        rgb: "245, 158, 11"
+        cmyk: "0, 35, 96, 4"
+      accent:
+        hex: "#8b5cf6"
+        rgb: "139, 92, 246"
+        cmyk: "44, 63, 0, 4"
+      background:
+        hex: "#fef3c7"
+      text_primary:
+        hex: "#18181b"
+      text_secondary:
+        hex: "#3f3f46"
+    typography:
+      title_font: "Montserrat ExtraBold"
+      body_font: "Poppins"
+      code_font: "Source Code Pro"
+      hierarchy:
+        h1: "52pt, ExtraBold"
+        h2: "38pt, Bold"
+        h3: "30pt, SemiBold"
+        body: "22pt, Regular"
+        caption: "18pt, Regular"
+    grid_layout:
+      margins: "0.6in all sides"
+      columns: 12
+      gutter: "0.25in"
+    
+  academic_research:
+    name: "學術研究"
+    formality: "非常正式"
+    use_cases:
+      - "學術發表"
+      - "研究報告"
+      - "論文簡報"
+      - "科學會議"
+    color_palette:
+      primary:
+        hex: "#1e40af"
+        rgb: "30, 64, 175"
+        cmyk: "83, 63, 0, 31"
+      secondary:
+        hex: "#7c2d12"
+        rgb: "124, 45, 18"
+        cmyk: "0, 64, 85, 51"
+      accent:
+        hex: "#059669"
+        rgb: "5, 150, 105"
+        cmyk: "97, 0, 30, 41"
+      background:
+        hex: "#f9fafb"
+      text_primary:
+        hex: "#111827"
+      text_secondary:
+        hex: "#4b5563"
+    typography:
+      title_font: "Times New Roman Bold"
+      body_font: "Georgia"
+      code_font: "Consolas"
+      hierarchy:
+        h1: "40pt, Bold"
+        h2: "30pt, Bold"
+        h3: "22pt, SemiBold"
+        body: "16pt, Regular"
+        caption: "12pt, Italic"
+    grid_layout:
+      margins: "0.75in all sides"
+      columns: 12
+      gutter: "0.2in"
+    
+  minimal_modern:
+    name: "簡約現代"
+    formality: "半正式"
+    use_cases:
+      - "設計簡報"
+      - "產品展示"
+      - "品牌指南"
+      - "作品集"
+    color_palette:
+      primary:
+        hex: "#000000"
+        rgb: "0, 0, 0"
+        cmyk: "0, 0, 0, 100"
+      secondary:
+        hex: "#737373"
+        rgb: "115, 115, 115"
+        cmyk: "0, 0, 0, 55"
+      accent:
+        hex: "#ef4444"
+        rgb: "239, 68, 68"
+        cmyk: "0, 72, 72, 6"
+      background:
+        hex: "#ffffff"
+      text_primary:
+        hex: "#0a0a0a"
+      text_secondary:
+        hex: "#525252"
+    typography:
+      title_font: "Helvetica Neue Bold"
+      body_font: "Lato"
+      code_font: "Monaco"
+      hierarchy:
+        h1: "56pt, Bold"
+        h2: "42pt, Bold"
+        h3: "32pt, Regular"
+        body: "20pt, Light"
+        caption: "16pt, Light"
+    grid_layout:
+      margins: "1.0in all sides"
+      columns: 12
+      gutter: "0.3in"
+
+core_capabilities:
+  - name: "風格指南生成"
+    description: "完整的視覺設計系統"
+    output_includes:
+      - "配色方案（HEX, RGB, CMYK）"
+      - "字型階層（標題、正文、標註）"
+      - "網格系統（邊距、欄位、間距）"
+      - "視覺原則（Do's & Don'ts）"
+      - "實施技巧"
+    
+  - name: "WCAG AA 合規性"
+    description: "確保無障礙設計"
+    checks:
+      - "色彩對比率 ≥ 4.5:1（正文）"
+      - "色彩對比率 ≥ 3:1（標題）"
+      - "色盲友善調色盤"
+      - "字體大小 ≥ 16pt（正文）"
+      - "清晰的視覺層次"
+    tools:
+      - "對比率計算器"
+      - "色盲模擬器"
+    
+  - name: "網格化投影片框架"
+    description: "結構化版面系統"
+    slide_types:
+      - type: "title_slide"
+        layout: "置中對齊，大標題 + 副標題"
+        grid: "6x4 中央區塊"
+        
+      - type: "content_slide"
+        layout: "標題 + 項目符號或文字"
+        grid: "12x8，1 列標題 + 7 列內容"
+        
+      - type: "data_slide"
+        layout: "標題 + 圖表或表格"
+        grid: "12x8，1 列標題 + 7 列數據"
+        
+      - type: "image_slide"
+        layout: "全幅圖片 + 標題疊加"
+        grid: "12x12 滿版"
+        
+      - type: "comparison_slide"
+        layout: "並排比較（2-3 欄）"
+        grid: "12x8，等寬欄位"
+    
+  - name: "圖片來源指引"
+    description: "高品質圖片推薦"
+    platforms:
+      - name: "Unsplash"
+        url: "https://unsplash.com"
+        license: "免費商用"
+        keywords: "高解析、專業攝影"
+        
+      - name: "Pexels"
+        url: "https://pexels.com"
+        license: "免費商用"
+        keywords: "影片、照片、向量"
+        
+      - name: "Pixabay"
+        url: "https://pixabay.com"
+        license: "免費商用"
+        keywords: "插畫、向量圖"
+    recommendations:
+      - "解析度 ≥ 1920x1080"
+      - "符合品牌色調"
+      - "避免通用庫存照"
+      - "考慮情緒與氛圍"
+    
+  - name: "Python 驅動的調色盤視覺化"
+    description: "自動生成配色預覽"
+    tools:
+      - "matplotlib - 調色盤展示"
+      - "seaborn - 色彩和諧檢查"
+    output: "PNG 格式調色盤卡片"
+    
+  - name: "Do's & Don'ts 指南"
+    description: "視覺設計最佳實踐"
+    categories:
+      - "配色使用"
+      - "字型搭配"
+      - "版面排列"
+      - "圖片選擇"
+      - "資訊密度"
+
+design_workflow:
+  step_1:
+    name: "風格選擇"
+    input: "Scenario Intelligence 的風格建議"
+    process: "確認 5 種風格中的最佳選擇"
+    output: "風格名稱 + 完整配色與字型系統"
+    
+  step_2:
+    name: "調色盤生成"
+    input: "風格配置"
+    process: "提取主色、副色、強調色、背景色、文字色"
+    output: "HEX, RGB, CMYK 完整色碼"
+    
+  step_3:
+    name: "無障礙驗證"
+    input: "調色盤"
+    process: "計算對比率、色盲模擬"
+    output: "WCAG 合規性報告"
+    
+  step_4:
+    name: "字型階層設計"
+    input: "風格配置 + 內容需求"
+    process: "定義 H1-H3、正文、標註的字型與大小"
+    output: "字型規範表"
+    
+  step_5:
+    name: "網格系統建立"
+    input: "投影片尺寸（16:9 或 4:3）"
+    process: "設定邊距、欄位、間距"
+    output: "網格模板"
+    
+  step_6:
+    name: "版面框架設計"
+    input: "內容類型（標題、文字、圖表、圖片、比較）"
+    process: "為每種類型設計版面"
+    output: "投影片版面庫"
+    
+  step_7:
+    name: "圖片推薦"
+    input: "內容主題 + 風格"
+    process: "生成搜尋關鍵字、推薦平台"
+    output: "圖片來源指引"
+    
+  step_8:
+    name: "風格指南文檔"
+    input: "所有設計決策"
+    process: "整合為完整風格指南"
+    output: "風格指南 PDF/Markdown + Do's & Don'ts"
+
+output_format:
+  style_guide:
+    style_name: "string"
+    formality: "formal|semi-formal|casual"
+    
+    color_palette:
+      primary: {hex: "string", rgb: "string", cmyk: "string"}
+      secondary: {hex: "string", rgb: "string", cmyk: "string"}
+      accent: {hex: "string", rgb: "string", cmyk: "string"}
+      background: {hex: "string"}
+      text_primary: {hex: "string"}
+      text_secondary: {hex: "string"}
+      
+    typography:
+      title_font: "string"
+      body_font: "string"
+      hierarchy:
+        h1: "string"
+        h2: "string"
+        h3: "string"
+        body: "string"
+        caption: "string"
+        
+    grid_layout:
+      margins: "string"
+      columns: "number"
+      gutter: "string"
+      
+    accessibility:
+      wcag_compliant: "boolean"
+      contrast_ratios:
+        - pair: "primary/background"
+          ratio: "number"
+          passes: "boolean"
+      colorblind_safe: "boolean"
+      
+    slide_layouts:
+      - type: "title|content|data|image|comparison"
+        description: "string"
+        grid_usage: "string"
+        
+    image_guidance:
+      keywords: ["keyword1", "keyword2"]
+      platforms: ["Unsplash", "Pexels"]
+      requirements:
+        - "resolution ≥ 1920x1080"
+        - "brand color alignment"
+        
+    dos_and_donts:
+      dos:
+        - "string"
+      donts:
+        - "string"
+
+quality_standards:
+  wcag_compliance: "AA 級以上"
+  contrast_ratio: "≥ 4.5:1（正文），≥ 3:1（標題）"
+  consistency: "所有元素符合風格指南"
+  readability: "字體大小適中，行距舒適"
+  visual_hierarchy: "清晰的視覺層次"
+
+available_tools:
+  - tool: "python_execution"
+    purpose: "調色盤視覺化、對比率計算"
+    packages:
+      - "matplotlib"
+      - "seaborn"
+
+prompt_template: |
+  你是 Presentation Visual Designer Agent，專門簡化一致性、品牌化簡報視覺創建。
+  
+  你的核心任務：
+  1. 從 5 種設計風格中選擇最適合的
+  2. 生成完整配色方案（HEX, RGB, CMYK）
+  3. 設計字型階層（H1-H3、正文、標註）
+  4. 建立網格系統（邊距、欄位、間距）
+  5. 驗證 WCAG AA 合規性（對比率、色盲友善）
+  6. 設計投影片版面框架（標題、文字、圖表、圖片、比較）
+  7. 提供圖片來源指引
+  8. 生成完整風格指南與 Do's & Don'ts
+  
+  5 種設計風格：
+  - Business Professional：正式、深藍灰、Arial
+  - Tech Innovation：現代、科技藍綠、Roboto
+  - Creative Energy：活潑、鮮豔多彩、Montserrat
+  - Academic Research：嚴謹、深藍酒紅、Times New Roman
+  - Minimal Modern：極簡、黑白紅、Helvetica
+  
+  無障礙標準：
+  - 對比率 ≥ 4.5:1（正文）
+  - 對比率 ≥ 3:1（標題）
+  - 色盲友善調色盤
+  - 字體 ≥ 16pt
+  
+  你的設計將確保簡報視覺專業、一致、無障礙。
