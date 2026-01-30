@@ -1,388 +1,123 @@
-# 📁 AI Presentation System - Directory Structure
-
-> Complete repository organization and file reference guide
-
----
-
-## 🗂️ Current Repository Structure
+# Repository Structure
 
 ```
 ai-presentation-system/
-├── .gitignore                          # Git ignore patterns
-├── LICENSE                             # MIT License
-├── README.md                           # Main project documentation (10.5 KB)
-├── CONTRIBUTING.md                     # Contribution guidelines (8.1 KB)
+├── README.md                          # 系統概覽
+├── CHANGELOG.md                       # 版本變更記錄
+├── LICENSE                            # 授權條款
+├── .gitignore                         # Git 忽略規則
 │
-└── code/
-    └── agents/                         # AI Agent configurations
-        ├── README.md                   # Agent overview (6.9 KB)
-        ├── Agent實作指南.md             # Complete implementation guide (19.8 KB)
-        ├── 使用範例.md                   # Real-world usage scenarios (15.5 KB)
-        ├── create_agents.py            # Batch agent creation script (10.7 KB)
-        │
-        ├── agent_orchestrator_config.yaml              # Main coordinator (4.4 KB)
-        ├── agent_scenario_intelligence_config.yaml     # Context analyzer (6.2 KB)
-        ├── agent_content_strategist_config.yaml        # Narrative designer (7.5 KB)
-        ├── agent_research_analyst_config.yaml          # Data gatherer (7.4 KB)
-        ├── agent_visual_designer_config.yaml           # Aesthetic creator (12.1 KB)
-        ├── agent_chart_designer_config.yaml            # Visualization builder (10.7 KB)
-        └── agent_quality_assurance_config.yaml         # Output validator (10.5 KB)
+├── agents/                            # Agent 配置
+│   ├── agents_config_v2.json         # v2.0 配置（7 個 Agents）
+│   └── agents_config_v1.json         # v1.0 配置（歷史記錄）
+│
+├── docs/                              # 文檔
+│   ├── ARCHITECTURE.md               # 架構文檔
+│   ├── optimization_test_report_v2.md # v2.0 測試報告
+│   ├── USE_CASES_DETAILED.md         # 詳細應用案例（5 個產業）
+│   ├── QA_REPORT_v2.md               # 品質保證報告
+│   ├── API_REFERENCE.md              # API 文檔（待完成）
+│   └── DEPLOYMENT_GUIDE.md           # 部署指南（待完成）
+│
+├── images/                            # 架構圖與視覺素材
+│   ├── system_architecture_diagram.png    # 系統架構圖
+│   ├── workflow_diagram.png              # 工作流程圖
+│   ├── agent_collaboration_diagram.png   # Agent 協作網絡圖
+│   └── screenshots/                      # 系統截圖
+│       ├── dashboard.png
+│       └── presentation_output.png
+│
+├── examples/                          # 範例簡報
+│   ├── tech_architecture_review.pptx # 技術架構評審範例
+│   ├── product_launch.pptx           # 產品發表範例
+│   └── charts/                       # 範例圖表
+│       ├── chart1_performance.png
+│       ├── chart2_protocols.png
+│       └── chart3_evolution.png
+│
+├── scripts/                           # 工具腳本
+│   ├── generate_architecture_diagrams.py # 架構圖生成器
+│   ├── upload_to_github.py               # GitHub 上傳工具
+│   └── validate_config.py                # 配置驗證工具
+│
+└── tests/                             # 測試文件
+    ├── test_agent_execution.md       # Agent 執行測試記錄
+    ├── test_chart_generation.md      # 圖表生成測試
+    └── test_results/                 # 測試結果
+        └── test_presentation.pptx    # 測試簡報輸出
 ```
 
-**Total Files**: 15  
-**Total Size**: ~132 KB  
-**Languages**: YAML (7), Markdown (4), Python (1), Config (3)
+## 文件說明
+
+### 核心文檔
+- **README.md**: 快速開始、系統概覽、主要功能
+- **CHANGELOG.md**: 版本歷史、改進項目、已知問題
+- **ARCHITECTURE.md**: 詳細技術架構、Agent 協作模式
+
+### 配置文件
+- **agents_config_v2.json**: 完整的 7 個 Agents 配置
+  - ID、名稱、角色、工具包
+  - v2.0 關鍵改進標記
+  - 測試結果與性能指標
+
+### 測試與品質
+- **optimization_test_report_v2.md**: 完整測試報告
+  - v1.0 vs v2.0 對比
+  - 4 大測試項目驗證
+  - 問題修復與成效數據
+
+- **QA_REPORT_v2.md**: 品質保證檢查
+  - 系統就緒度評分：85.8/100
+  - 發現問題列表（按嚴重性排序）
+  - 生產部署建議
+
+### 應用案例
+- **USE_CASES_DETAILED.md**: 5 個產業案例
+  - 科技業、教育業、金融業、電商業、諮詢業
+  - 每個案例包含：背景、實施、成效、ROI
+  - 時間節省範圍：81.6% - 98.2%
+
+### 視覺素材
+- **images/**: 所有架構圖與截圖
+  - 系統架構圖：展示 7 個 Agents 協作
+  - 工作流程圖：7 步驟端到端流程
+  - Agent 網絡圖：協作拓撲結構
+
+## 版本管理
+
+### v2.0 (2026-01-30) - Current
+- ✅ Chart Designer 已啟用
+- ✅ Agent 日誌完整記錄
+- ✅ 演講者備註嵌入
+- ✅ 測試分數：90/100
+
+### v1.0 (2026-01-29) - Legacy
+- ⚠️ Chart Designer 未啟用
+- ⚠️ 缺少 Agent 日誌
+- ⚠️ 演講者備註外部
+- 測試分數：73/100
+
+## 待辦事項
+
+### 高優先級（P0）
+- [ ] API_REFERENCE.md - API 文檔
+- [ ] DEPLOYMENT_GUIDE.md - 部署指南
+- [ ] 錯誤處理測試
+- [ ] 回滾程序文檔
+
+### 中優先級（P1）
+- [ ] TROUBLESHOOTING.md - 故障排除
+- [ ] USER_MANUAL.md - 使用手冊
+- [ ] 強制執行 QA Agent
+- [ ] 數據歸因修正
+
+### 低優先級（P2）
+- [ ] 貢獻指南
+- [ ] 程式碼註解
+- [ ] 單元測試
+- [ ] CI/CD 設定
 
 ---
 
-## 📚 File Descriptions
-
-### Root Level
-
-#### `.gitignore` (817 bytes)
-Git ignore patterns for Python, virtual environments, IDE files, generated outputs, and temporary files.
-
-**Key Exclusions**:
-- Python cache and build artifacts
-- Virtual environments (venv/, env/)
-- IDE files (.vscode/, .idea/)
-- Generated presentations (*.pptx)
-- Data files (*.csv, *.xlsx)
-
-#### `LICENSE` (1.1 KB)
-MIT License - permits free use, modification, and distribution with attribution.
-
-#### `README.md` (10.5 KB)
-Main project documentation including:
-- Project overview and key features
-- Multi-agent architecture diagram
-- Quick start guide
-- Documentation links
-- Use cases and quality metrics
-- Technology stack
-- Roadmap and contribution info
-
-#### `CONTRIBUTING.md` (8.1 KB)
-Comprehensive contribution guidelines covering:
-- Code of conduct
-- Bug reporting and feature requests
-- Development setup
-- Coding standards (Python, YAML)
-- Commit message format
-- Pull request process
-
----
-
-### `code/agents/` - Agent Configuration Directory
-
-#### Documentation Files
-
-**`README.md`** (6.9 KB)
-- Agent configuration overview
-- Quick reference table
-- File structure explanation
-- Usage instructions
-
-**`Agent實作指南.md`** (19.8 KB)
-- Complete implementation walkthrough
-- Agent-by-agent detailed specs
-- YAML structure documentation
-- Customization guide
-- Troubleshooting section
-- Best practices
-
-**`使用範例.md`** (15.5 KB)
-- 4 complete real-world scenarios
-- Code examples for each use case
-- Multi-agent workflows
-- Advanced techniques
-- Performance optimization tips
-
-#### Automation Scripts
-
-**`create_agents.py`** (10.7 KB)
-Python script for batch agent creation from YAML configs.
-
-**Features**:
-- Reads all 7 YAML configurations
-- Creates agents via Nebula API
-- Validates configurations
-- Dry-run mode for testing
-- Progress reporting
-
-**Usage**:
-```bash
-# Create all agents
-python create_agents.py
-
-# Dry run (validate only)
-python create_agents.py --dry-run
-
-# Custom config directory
-python create_agents.py --config-dir ./custom/path
-```
-
-#### Agent Configuration Files (YAML)
-
-Each YAML file defines a complete agent specification:
-
-| File | Agent | Size | Purpose |
-|------|-------|------|---------|
-| `agent_orchestrator_config.yaml` | PowerPoint 簡報生成器 | 4.4 KB | Coordinates all agents, manages workflow |
-| `agent_scenario_intelligence_config.yaml` | Presentation Scenario Intelligence | 6.2 KB | Analyzes context, recommends structure |
-| `agent_content_strategist_config.yaml` | Presentation Content Strategist | 7.5 KB | Designs narrative, creates outlines |
-| `agent_research_analyst_config.yaml` | 簡報研究分析員 | 7.4 KB | Gathers data, validates facts |
-| `agent_visual_designer_config.yaml` | Presentation Visual Designer | 12.1 KB | Creates design styles, ensures consistency |
-| `agent_chart_designer_config.yaml` | Presentation Chart Designer | 10.7 KB | Generates data visualizations |
-| `agent_quality_assurance_config.yaml` | Presentation Quality Assurance | 10.5 KB | Validates output quality |
-
-**YAML Structure**:
-```yaml
-agent:
-  name: "Agent Name"
-  description: "Agent purpose and capabilities"
-  
-  prompt_sections:
-    identity: "Who is this agent"
-    purpose: "What problem it solves"
-    capabilities:
-      - capability_one
-      - capability_two
-    workflow: "Step-by-step process"
-    best_practices:
-      - practice_one
-      - practice_two
-  
-  selected_toolkits:
-    - toolkit_name
-  
-  tool_ids:
-    - tool_id_1
-    - tool_id_2
-```
-
----
-
-## 🎯 Agent Interaction Flow
-
-```
-User Request
-    ↓
-┌─────────────────────────────────────┐
-│   PowerPoint 簡報生成器 (Orchestrator)  │
-│   • Analyzes request                │
-│   • Delegates to specialists        │
-│   • Coordinates workflow            │
-└──────────────┬──────────────────────┘
-               ↓
-    ┌──────────┴──────────┐
-    ↓                     ↓
-┌──────────────────┐  ┌──────────────────┐
-│ Scenario         │  │ Content          │
-│ Intelligence     │  │ Strategist       │
-│ • Context        │  │ • Narrative      │
-│ • Audience       │  │ • Outline        │
-└──────────────────┘  └──────────────────┘
-    ↓                     ↓
-┌──────────────────┐  ┌──────────────────┐
-│ Research         │  │ Visual           │
-│ Analyst          │  │ Designer         │
-│ • Data           │  │ • Styles         │
-│ • Facts          │  │ • Colors         │
-└──────────────────┘  └──────────────────┘
-    ↓                     ↓
-┌──────────────────┐  ┌──────────────────┐
-│ Chart            │  │ Quality          │
-│ Designer         │  │ Assurance        │
-│ • Visuals        │  │ • Validation     │
-│ • Graphs         │  │ • Final Check    │
-└──────────────────┘  └──────────────────┘
-               ↓
-        Final Presentation
-         (.pptx file)
-```
-
----
-
-## 📊 File Statistics
-
-### By File Type
-
-| Type | Count | Total Size | Avg Size |
-|------|-------|------------|----------|
-| YAML | 7 | 59.4 KB | 8.5 KB |
-| Markdown | 4 | 52.3 KB | 13.1 KB |
-| Python | 1 | 10.7 KB | 10.7 KB |
-| Config | 3 | 10.0 KB | 3.3 KB |
-
-### By Directory
-
-| Directory | Files | Size | Purpose |
-|-----------|-------|------|---------|
-| `/` (root) | 4 | 20.4 KB | Project docs & config |
-| `/code/agents/` | 11 | 111.8 KB | Agent configurations |
-
-### Top 5 Largest Files
-
-1. `Agent實作指南.md` - 19.8 KB
-2. `使用範例.md` - 15.5 KB
-3. `agent_visual_designer_config.yaml` - 12.1 KB
-4. `agent_chart_designer_config.yaml` - 10.7 KB
-5. `create_agents.py` - 10.7 KB
-
----
-
-## 🔧 Configuration Management
-
-### Adding a New Agent
-
-1. Create YAML configuration in `code/agents/`
-2. Follow existing naming convention: `agent_{name}_config.yaml`
-3. Define all required sections (see YAML Structure above)
-4. Update `create_agents.py` to include new agent
-5. Add documentation to `Agent實作指南.md`
-6. Add usage examples to `使用範例.md`
-7. Update `README.md` agent count and descriptions
-
-### Modifying Existing Agents
-
-1. Edit the corresponding YAML file
-2. Validate YAML syntax: `python create_agents.py --dry-run`
-3. Test changes: `python create_agents.py`
-4. Update documentation if capabilities changed
-5. Commit with clear description of changes
-
-### Version Control
-
-- All configurations are version-controlled in Git
-- Use semantic versioning for major changes
-- Tag releases: `v1.0.0`, `v1.1.0`, etc.
-- Maintain CHANGELOG.md for tracking changes
-
----
-
-## 🚀 Quick Reference
-
-### Clone Repository
-```bash
-git clone https://github.com/glen200392/ai-presentation-system.git
-cd ai-presentation-system
-```
-
-### Setup Agents
-```bash
-python code/agents/create_agents.py
-```
-
-### Generate Presentation
-```python
-from nebula import delegate
-
-result = delegate(
-    agent_id='agt_0697a0226eaf7dc1800093eb8943c2da',
-    description="Create [scenario] presentation on [topic]"
-)
-```
-
-### Update Agent Config
-```bash
-# Edit YAML file
-vim code/agents/agent_orchestrator_config.yaml
-
-# Validate
-python code/agents/create_agents.py --dry-run
-
-# Apply changes
-python code/agents/create_agents.py
-```
-
----
-
-## 📖 Documentation Hierarchy
-
-```
-README.md (Start here)
-    ├── Quick Start
-    ├── Architecture Overview
-    └── Links to detailed docs
-        │
-        ├── code/agents/README.md (Agent overview)
-        │   └── Brief descriptions
-        │
-        ├── Agent實作指南.md (Technical details)
-        │   ├── Complete agent specs
-        │   ├── YAML structure
-        │   └── Customization guide
-        │
-        ├── 使用範例.md (Practical usage)
-        │   ├── Real scenarios
-        │   ├── Code examples
-        │   └── Best practices
-        │
-        └── CONTRIBUTING.md (For contributors)
-            ├── Setup instructions
-            ├── Coding standards
-            └── PR process
-```
-
----
-
-## 🎓 Learning Path
-
-### For New Users
-1. Read `README.md` - Understand project overview
-2. Follow Quick Start - Set up and run first presentation
-3. Read `使用範例.md` - See real-world scenarios
-4. Explore `code/agents/README.md` - Learn about agents
-
-### For Developers
-1. Read `CONTRIBUTING.md` - Setup dev environment
-2. Study `Agent實作指南.md` - Technical architecture
-3. Review YAML configs - Understand agent structure
-4. Examine `create_agents.py` - Learn automation scripts
-
-### For Contributors
-1. Review `CONTRIBUTING.md` - Guidelines and standards
-2. Check existing issues - Find contribution opportunities
-3. Read documentation - Understand current state
-4. Submit PRs - Follow contribution process
-
----
-
-## 🔗 External Links
-
-- **GitHub**: https://github.com/glen200392/ai-presentation-system
-- **Issues**: https://github.com/glen200392/ai-presentation-system/issues
-- **Nebula Platform**: https://nebula.gg
-- **Python-pptx**: https://python-pptx.readthedocs.io/
-
----
-
-## 📝 Maintenance Notes
-
-### File Updates Required When:
-
-**Adding New Agent**:
-- [ ] Create new YAML config
-- [ ] Update `create_agents.py`
-- [ ] Update `README.md` (agent count, table)
-- [ ] Update `Agent實作指南.md` (specs)
-- [ ] Update `使用範例.md` (examples)
-- [ ] Update this `STRUCTURE.md`
-
-**Changing Agent Capabilities**:
-- [ ] Modify YAML config
-- [ ] Update `Agent實作指南.md`
-- [ ] Update `使用範例.md` if needed
-- [ ] Validate with `--dry-run`
-
-**Adding Documentation**:
-- [ ] Create new .md file
-- [ ] Update `README.md` links
-- [ ] Update this `STRUCTURE.md`
-- [ ] Update documentation hierarchy diagram
-
----
-
-*Last Updated: 2026-01-30*  
-*Repository: https://github.com/glen200392/ai-presentation-system*
+**維護者**: glen200392  
+**Repository**: https://github.com/glen200392/ai-presentation-system
