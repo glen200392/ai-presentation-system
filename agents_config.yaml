@@ -1,0 +1,610 @@
+# AI Presentation System - Agents Configuration
+# Version: 2.0.0
+# Last Updated: 2026-02-02
+# Description: Complete configuration for the 8-agent presentation system
+
+# System Overview
+system:
+  name: "AI Presentation System"
+  version: "2.0.0"
+  description: "AI-powered presentation generation achieving 98/100 quality through multi-agent collaboration"
+  quality_score: 98
+  agents_count: 8
+  
+# Agent Definitions
+agents:
+  
+  # Agent 1: Scenario Intelligence (Entry Point)
+  - id: "scenario-intelligence"
+    name: "Presentation Scenario Intelligence"
+    role: "Requirements Analyzer & Scenario Classifier"
+    priority: 1
+    stage: "planning"
+    
+    description: |
+      Transforms vague presentation requests into actionable blueprints.
+      Classifies scenarios and recommends optimal structure before content creation.
+    
+    capabilities:
+      - "Scenario classification (8 enterprise types)"
+      - "Audience analysis and persona mapping"
+      - "Slide-level outline generation"
+      - "Narrative flow mapping"
+      - "Design style recommendation"
+      - "Core message extraction (3-5 key points)"
+    
+    toolkits:
+      - "Web"
+    
+    inputs:
+      - "User requirements (text/voice)"
+      - "Audience profile (optional)"
+      - "Time constraints"
+      - "Presentation objective"
+    
+    outputs:
+      - "Scenario classification with rationale"
+      - "Recommended slide sequence"
+      - "Narrative arc outline"
+      - "Design style suggestion"
+    
+    scenarios:
+      - "Pitch Deck"
+      - "Business Proposal"
+      - "Board Report"
+      - "Quarterly Business Review (QBR)"
+      - "Product Launch"
+      - "Training Session"
+      - "Sales Pitch"
+      - "Strategy Presentation"
+    
+    delegation:
+      next_agents:
+        - "content-strategist"
+  
+  # Agent 2: Content Strategist (Core Structure)
+  - id: "content-strategist"
+    name: "Presentation Content Strategist"
+    role: "Narrative Designer & Speech Writer"
+    priority: 2
+    stage: "content-design"
+    
+    description: |
+      Transforms raw ideas into clear, compelling presentations.
+      Creates detailed outlines, speaker notes, and speech scripts.
+    
+    capabilities:
+      - "Audience analysis & goal setting"
+      - "Narrative framework selection (5 frameworks)"
+      - "Slide-by-slide outlines with timing"
+      - "Full speech script generation"
+      - "Interactive elements design"
+      - "Q&A preparation (5-7 questions)"
+      - "Consistency checks & flow optimization"
+    
+    toolkits:
+      - "Web"
+    
+    frameworks:
+      - "Problem-Solution"
+      - "Hero's Journey"
+      - "Data-Driven Story"
+      - "Before-After-Bridge"
+      - "What-So What-Now What"
+    
+    inputs:
+      - "Scenario blueprint from Agent 1"
+      - "Raw content/ideas"
+      - "Target audience profile"
+    
+    outputs:
+      - "Detailed slide outline"
+      - "Speaker notes for each slide"
+      - "Full presentation script"
+      - "Q&A preparation"
+    
+    delegation:
+      next_agents:
+        - "visual-designer"
+        - "chart-designer"
+        - "narrative-optimizer"
+  
+  # Agent 3: Narrative Optimizer (Story Enhancement)
+  - id: "narrative-optimizer"
+    name: "Presentation Narrative Optimizer"
+    role: "Story Structure Analyzer & Flow Enhancer"
+    priority: 3
+    stage: "optimization"
+    
+    description: |
+      Transforms scattered decks into cohesive stories.
+      Applies narrative frameworks and analyzes engagement patterns.
+    
+    capabilities:
+      - "Five narrative framework implementation"
+      - "Emotional arc analysis"
+      - "Engagement curve visualization"
+      - "Information density assessment"
+      - "Cognitive load optimization"
+      - "Slide transition strengthening"
+      - "Gap and redundancy detection"
+    
+    toolkits:
+      - "Code"
+    
+    frameworks:
+      - "Problem-Solution"
+      - "Hero's Journey"
+      - "Data-Driven Story"
+      - "Before-After-Bridge"
+      - "What-So What-Now What"
+    
+    inputs:
+      - "Draft slide content"
+      - "Target narrative framework"
+    
+    outputs:
+      - "Engagement curve visualization"
+      - "Density heatmap"
+      - "Restructuring recommendations"
+      - "Before/after comparison"
+    
+    analysis_metrics:
+      - "Attention peaks and valleys"
+      - "Information density per slide"
+      - "Cognitive load scoring"
+      - "Transition quality"
+      - "Narrative coherence"
+    
+    delegation:
+      next_agents:
+        - "quality-assurance"
+  
+  # Agent 4: Visual Designer (Brand & Imagery)
+  - id: "visual-designer"
+    name: "Presentation Visual Designer"
+    role: "Visual Identity Creator & Brand Enforcer"
+    priority: 4
+    stage: "visual-design"
+    
+    description: |
+      Creates cohesive, on-brand presentation visuals.
+      Generates custom imagery and enforces design consistency.
+    
+    capabilities:
+      - "Five predefined design styles"
+      - "Complete color schemes (HEX, RGB, CMYK)"
+      - "Typography hierarchy design"
+      - "WCAG AA-compliant palettes"
+      - "AI image generation (40+ templates)"
+      - "Accessibility verification"
+      - "Style guide generation"
+    
+    toolkits:
+      - "Web"
+      - "Code"
+      - "Image Generation"
+    
+    design_styles:
+      - name: "Business Professional"
+        colors: ["#1A237E", "#FFFFFF", "#E3F2FD"]
+        fonts: ["Arial", "Calibri"]
+        use_cases: ["Corporate", "Financial"]
+      
+      - name: "Tech Innovation"
+        colors: ["#00BCD4", "#212121", "#F5F5F5"]
+        fonts: ["Roboto", "SF Pro"]
+        use_cases: ["Startups", "Tech Products"]
+      
+      - name: "Creative Energy"
+        colors: ["#FF6F00", "#7C4DFF", "#FFEB3B"]
+        fonts: ["Montserrat", "Poppins"]
+        use_cases: ["Marketing", "Creative Agencies"]
+      
+      - name: "Academic Research"
+        colors: ["#004D40", "#FFFFFF", "#B2DFDB"]
+        fonts: ["Georgia", "Times New Roman"]
+        use_cases: ["Research", "Education"]
+      
+      - name: "Minimal Modern"
+        colors: ["#000000", "#FFFFFF", "#F5F5F5"]
+        fonts: ["Helvetica", "Inter"]
+        use_cases: ["Design", "Luxury Brands"]
+    
+    inputs:
+      - "Content outline"
+      - "Brand guidelines (optional)"
+      - "Target style preference"
+    
+    outputs:
+      - "Complete visual style guide"
+      - "Custom generated images"
+      - "Color palette with accessibility scores"
+      - "Typography specifications"
+    
+    delegation:
+      next_agents:
+        - "quality-assurance"
+  
+  # Agent 5: Chart Designer (Data Visualization)
+  - id: "chart-designer"
+    name: "Presentation Chart Designer"
+    role: "Data Visualization Specialist"
+    priority: 5
+    stage: "data-visualization"
+    
+    description: |
+      Converts raw data into publication-ready charts.
+      Ensures accessibility, consistency, and optimal chart type selection.
+    
+    capabilities:
+      - "Python data processing (pandas)"
+      - "Eight chart types"
+      - "Five design style templates"
+      - "Data cleaning & transformation"
+      - "Color-blind friendly palettes"
+      - "Interactive chart generation"
+      - "Multi-format export (PNG, SVG, PDF, HTML)"
+    
+    toolkits:
+      - "Code"
+      - "Web"
+    
+    chart_types:
+      - "Bar Chart"
+      - "Line Chart"
+      - "Pie/Donut Chart"
+      - "Scatter Plot"
+      - "Heatmap"
+      - "Treemap"
+      - "Waterfall Chart"
+      - "Combination Chart"
+    
+    inputs:
+      - "Raw data (CSV, Excel, JSON)"
+      - "Chart type preference (optional)"
+      - "Design style selection"
+    
+    outputs:
+      - "Publication-ready charts"
+      - "Chart recommendation with rationale"
+      - "Accessibility compliance report"
+      - "High-resolution exports"
+    
+    data_processing:
+      - "Missing value handling"
+      - "Data aggregation"
+      - "Statistical summaries"
+      - "Derived metrics calculation"
+    
+    delegation:
+      next_agents:
+        - "quality-assurance"
+  
+  # Agent 6: Citation Manager (References)
+  - id: "citation-manager"
+    name: "Presentation Citation Manager"
+    role: "Source Attribution & Reference Manager"
+    priority: 6
+    stage: "citation-management"
+    
+    description: |
+      Automates citation management for business and academic decks.
+      Finds, validates, and formats sources to professional standards.
+    
+    capabilities:
+      - "Multi-style citation formatting (APA, MLA, Chicago, IEEE)"
+      - "Source credibility assessment"
+      - "In-slide marker generation"
+      - "Link validation with archive.org"
+      - "Recency checks"
+      - "Metadata extraction"
+      - "Reference slide generation"
+      - "Export to BibTeX, RIS, JSON"
+    
+    toolkits:
+      - "Web"
+      - "Code"
+    
+    citation_styles:
+      - "APA 7"
+      - "MLA 9"
+      - "Chicago 17"
+      - "IEEE"
+      - "Custom"
+    
+    inputs:
+      - "Presentation content"
+      - "Citations style preference"
+    
+    outputs:
+      - "In-slide citation markers"
+      - "Reference slide with hanging indents"
+      - "Citation export files"
+      - "Source credibility report"
+    
+    validation:
+      - "Link accessibility"
+      - "DOI verification"
+      - "Publication date recency"
+      - "Author credibility"
+    
+    delegation:
+      next_agents:
+        - "quality-assurance"
+  
+  # Agent 7: Quality Assurance (Final Validation)
+  - id: "quality-assurance"
+    name: "Presentation Quality Assurance"
+    role: "Pre-delivery Validator & Quality Gatekeeper"
+    priority: 7
+    stage: "quality-control"
+    
+    description: |
+      Performs systematic pre-delivery validation.
+      Ensures data accuracy, visual consistency, and accessibility compliance.
+    
+    capabilities:
+      - "Data validation & cross-referencing"
+      - "Visual analysis (fonts, colors, layouts)"
+      - "Content audit (flow, completeness)"
+      - "Accessibility review (WCAG compliance)"
+      - "Style compliance checking"
+      - "Severity-rated remediation reports"
+    
+    toolkits:
+      - "Web"
+      - "Code"
+    
+    validation_dimensions:
+      - name: "Data Validation"
+        checks:
+          - "Figure cross-referencing"
+          - "Metric recalculation"
+          - "Source verification"
+      
+      - name: "Visual Analysis"
+        checks:
+          - "Font consistency"
+          - "Color palette adherence"
+          - "Layout alignment"
+          - "Image quality"
+      
+      - name: "Content Audit"
+        checks:
+          - "Narrative flow"
+          - "Section completeness"
+          - "Citation presence"
+          - "Placeholder removal"
+      
+      - name: "Accessibility"
+        checks:
+          - "Contrast ratios (WCAG AA)"
+          - "Font size minimums"
+          - "Alt-text presence"
+          - "Heading hierarchy"
+      
+      - name: "Style Compliance"
+        checks:
+          - "Corporate guideline adherence"
+          - "Formatting rules"
+          - "Template compliance"
+    
+    inputs:
+      - "Complete presentation draft"
+      - "Quality standards/guidelines"
+    
+    outputs:
+      - "Quality score (0-100)"
+      - "Severity-rated issue list"
+      - "Slide-level remediation plan"
+      - "Compliance report"
+    
+    severity_levels:
+      - "Critical (blocks delivery)"
+      - "High (major quality impact)"
+      - "Medium (minor issues)"
+      - "Low (polish items)"
+    
+    delegation:
+      next_agents:
+        - "pptx-generator"
+  
+  # Agent 8: PowerPoint Generator (File Creation)
+  - id: "pptx-generator"
+    name: "PowerPoint 簡報生成器"
+    role: "PPTX File Generator & Delivery Agent"
+    priority: 8
+    stage: "file-generation"
+    
+    description: |
+      Generates editable .pptx files from approved content.
+      Handles all slide types, charts, images, and animations.
+    
+    capabilities:
+      - "Five design style application"
+      - "Structured outline generation"
+      - "Multi-type slide creation"
+      - "Web data integration"
+      - "High-resolution image insertion"
+      - "WCAG contrast verification"
+      - "Animation suggestions"
+      - "Error handling with Python fallback"
+    
+    toolkits:
+      - "Web"
+      - "Python"
+      - "File Management"
+      - "Image Generation"
+      - "Agent Delegation"
+    
+    slide_types:
+      - "Title Slide"
+      - "Text Slide"
+      - "Image Slide"
+      - "Chart Slide (Bar, Pie, Line, Radar, Scatter)"
+      - "Process Diagram"
+      - "Timeline"
+      - "Comparison Slide"
+    
+    operations:
+      - name: "generatePresentation"
+        description: "Create presentation skeleton and populate content"
+      - name: "downloadPresentation"
+        description: "Generate downloadable .pptx file"
+      - name: "embedPresentation"
+        description: "Create shareable online link"
+      - name: "deletePresentation"
+        description: "Remove expired files"
+    
+    inputs:
+      - "Quality-approved content"
+      - "Visual style specifications"
+      - "Chart data and images"
+    
+    outputs:
+      - "Editable .pptx file"
+      - "Online sharing link"
+      - "Generation log"
+
+# Collaboration Workflow
+workflow:
+  
+  phases:
+    - phase: 1
+      name: "Planning & Analysis"
+      agents: ["scenario-intelligence"]
+      duration: "5-10 minutes"
+      outputs: ["Scenario classification", "Audience analysis", "Structure blueprint"]
+    
+    - phase: 2
+      name: "Content Creation"
+      agents: ["content-strategist"]
+      duration: "15-25 minutes"
+      outputs: ["Detailed outline", "Speaker notes", "Speech script"]
+    
+    - phase: 3
+      name: "Optimization & Enhancement"
+      agents: ["narrative-optimizer"]
+      duration: "10-15 minutes"
+      outputs: ["Engagement analysis", "Flow optimization", "Structure refinement"]
+    
+    - phase: 4
+      name: "Visual & Data Design"
+      agents: ["visual-designer", "chart-designer"]
+      parallel: true
+      duration: "20-30 minutes"
+      outputs: ["Visual style guide", "Custom imagery", "Data charts"]
+    
+    - phase: 5
+      name: "Citation & References"
+      agents: ["citation-manager"]
+      duration: "10-15 minutes"
+      outputs: ["Citations", "Reference slide", "Source validation"]
+    
+    - phase: 6
+      name: "Quality Assurance"
+      agents: ["quality-assurance"]
+      duration: "15-20 minutes"
+      outputs: ["Quality score", "Issue report", "Remediation plan"]
+    
+    - phase: 7
+      name: "File Generation"
+      agents: ["pptx-generator"]
+      duration: "5-10 minutes"
+      outputs: [".pptx file", "Download link"]
+  
+  total_duration: "80-125 minutes"
+  
+  quality_gates:
+    - gate: "Post-Planning"
+      required_score: 70
+      blocking: false
+    
+    - gate: "Post-Content"
+      required_score: 75
+      blocking: false
+    
+    - gate: "Post-QA"
+      required_score: 90
+      blocking: true
+  
+  delegation_rules:
+    - "Agent 1 always starts the process"
+    - "Agent 2 receives Agent 1 output"
+    - "Agent 3 can run parallel with Agents 4-5"
+    - "Agent 6 runs after content is stable"
+    - "Agent 7 validates all previous outputs"
+    - "Agent 8 only proceeds after QA approval"
+
+# Quality Standards
+quality:
+  target_score: 98
+  
+  scoring_weights:
+    content_quality: 25
+    visual_design: 20
+    data_accuracy: 20
+    accessibility: 15
+    narrative_flow: 10
+    citation_quality: 10
+  
+  benchmarks:
+    - "Content clarity: 95+"
+    - "Visual consistency: 98+"
+    - "Data accuracy: 100%"
+    - "WCAG AA compliance: 100%"
+    - "Narrative engagement: 90+"
+    - "Citation completeness: 95+"
+
+# Deployment Configuration
+deployment:
+  
+  platform: "Nebula AI"
+  
+  requirements:
+    - "Python 3.8+"
+    - "Internet connection (for web research)"
+    - "API access to Nebula agent network"
+  
+  setup_steps:
+    - "Clone repository"
+    - "Install dependencies (pip install -r requirements.txt)"
+    - "Configure agent API keys (if required)"
+    - "Run orchestrator script"
+  
+  usage:
+    quick_start: |
+      # Basic usage
+      python orchestrator.py --input "Create a sales pitch for AI product"
+      
+      # With specific style
+      python orchestrator.py --input "Board report on Q4 results" --style "business-professional"
+      
+      # Custom configuration
+      python orchestrator.py --config custom_config.yaml
+
+# Maintenance & Updates
+maintenance:
+  version_history:
+    - version: "2.0.0"
+      date: "2026-02-02"
+      changes:
+        - "Complete 8-agent system restructure"
+        - "Added Scenario Intelligence agent"
+        - "Enhanced QA validation framework"
+        - "Improved YAML configuration"
+  
+  update_schedule: "Monthly"
+  
+  support:
+    documentation: "docs/"
+    examples: "examples/"
+    issues: "https://github.com/glen200392/ai-presentation-system/issues"
+
+# License & Attribution
+license: "MIT"
+attribution: |
+  AI Presentation System
+  Developed with Nebula AI Platform
+  © 2026 - Open Source Project
