@@ -1,123 +1,147 @@
 # Contributing to AI Presentation System
 
-First off, thank you for considering contributing to AI Presentation System! 🎉
+Thank you for your interest in contributing! This document provides guidelines and instructions for contributing to the AI Presentation System.
 
-This project aims to create a comprehensive, enterprise-grade AI presentation generation system. Your contributions help make it better for everyone.
+---
 
 ## 📋 Table of Contents
 
 - [Code of Conduct](#code-of-conduct)
-- [How Can I Contribute?](#how-can-i-contribute)
+- [Getting Started](#getting-started)
 - [Development Setup](#development-setup)
+- [How to Contribute](#how-to-contribute)
 - [Coding Standards](#coding-standards)
-- [Commit Guidelines](#commit-guidelines)
+- [Testing Requirements](#testing-requirements)
 - [Pull Request Process](#pull-request-process)
+- [Agent Development Guidelines](#agent-development-guidelines)
 
 ---
 
-## 🤝 Code of Conduct
+## 📜 Code of Conduct
 
-This project adheres to a Code of Conduct that all contributors are expected to follow:
+This project adheres to a code of conduct that we expect all contributors to follow. Please read [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) before contributing.
 
-- **Be respectful** - Treat everyone with respect and consideration
-- **Be collaborative** - Work together constructively
-- **Be professional** - Keep discussions focused and productive
-- **Be inclusive** - Welcome contributors of all backgrounds and skill levels
-
----
-
-## 🎯 How Can I Contribute?
-
-### Reporting Bugs
-
-Before creating bug reports, please check existing issues to avoid duplicates. When creating a bug report, include:
-
-- **Clear title** - Describe the issue concisely
-- **Steps to reproduce** - Detailed steps to recreate the bug
-- **Expected behavior** - What you expected to happen
-- **Actual behavior** - What actually happened
-- **Environment** - Python version, OS, Nebula platform version
-- **Screenshots** - If applicable
-
-### Suggesting Enhancements
-
-Enhancement suggestions are welcome! Please provide:
-
-- **Use case** - Why is this enhancement valuable?
-- **Proposed solution** - How should it work?
-- **Alternatives** - Other approaches you've considered
-- **Impact** - Who benefits and how?
-
-### Contributing Code
-
-We welcome contributions in these areas:
-
-#### 🎨 Design & Visual
-- New design styles beyond the current 5
-- Additional color palettes
-- Layout templates for specific industries
-- Brand template integration
-
-#### 📊 Data & Charts
-- New chart types (waterfall, funnel, etc.)
-- Data processing improvements
-- Statistical analysis features
-- Real-time data integration
-
-#### 🤖 Agent Capabilities
-- Enhanced agent prompts
-- New specialized agents
-- Workflow optimizations
-- Error handling improvements
-
-#### 🌐 Internationalization
-- Translations (Chinese, Japanese, Spanish, etc.)
-- Locale-specific formatting
-- Cultural adaptation for presentations
-
-#### 📚 Documentation
-- Tutorial improvements
-- Code examples
-- API documentation
-- Best practices guides
+**In summary:**
+- Be respectful and inclusive
+- Welcome newcomers and help them learn
+- Focus on constructive feedback
+- Respect differing viewpoints and experiences
 
 ---
 
-## 🛠️ Development Setup
+## 🚀 Getting Started
 
 ### Prerequisites
 
+- Python 3.10 or higher
+- Git
+- GitHub account
+- Nebula AI Platform account (for agent testing)
+
+### First-Time Setup
+
+1. **Fork the repository**
+   ```bash
+   # Click the "Fork" button on GitHub
+   # Then clone your fork
+   git clone https://github.com/YOUR_USERNAME/ai-presentation-system.git
+   cd ai-presentation-system
+   ```
+
+2. **Add upstream remote**
+   ```bash
+   git remote add upstream https://github.com/glen200392/ai-presentation-system.git
+   ```
+
+3. **Install development dependencies**
+   ```bash
+   pip install -r requirements-dev.txt
+   ```
+
+4. **Set up pre-commit hooks**
+   ```bash
+   pre-commit install
+   ```
+
+---
+
+## 💻 Development Setup
+
+### Virtual Environment
+
+We recommend using a virtual environment:
+
 ```bash
-# Ensure you have Python 3.8+
-python --version
-
-# Nebula AI platform access
-# GitHub account for OAuth (optional)
-```
-
-### Setup Steps
-
-```bash
-# 1. Fork the repository
-# Click "Fork" on GitHub
-
-# 2. Clone your fork
-git clone https://github.com/YOUR_USERNAME/ai-presentation-system.git
-cd ai-presentation-system
-
-# 3. Create a virtual environment (optional but recommended)
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# 4. Install dependencies
-pip install -r requirements.txt  # If available
-
-# 5. Create agents
-python code/agents/create_agents.py --dry-run
-
-# 6. Create a feature branch
-git checkout -b feature/your-feature-name
+pip install -r requirements-dev.txt
 ```
+
+### Environment Variables
+
+Create a `.env` file in the project root:
+
+```bash
+# Nebula AI Configuration
+NEBULA_API_KEY=your_api_key_here
+
+# SlidesGo API (for PowerPoint generation)
+SLIDESGO_API_KEY=your_key_here
+
+# Optional: Testing configuration
+TEST_MODE=development
+LOG_LEVEL=DEBUG
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=ai_presentation_system --cov-report=html
+
+# Run specific test file
+pytest tests/test_agents/test_scenario_intelligence.py
+
+# Run with verbose output
+pytest -v
+```
+
+---
+
+## 🤝 How to Contribute
+
+### Types of Contributions
+
+We welcome several types of contributions:
+
+1. **Bug Reports** 🐛
+   - Use GitHub Issues with the "bug" label
+   - Include reproduction steps
+   - Provide system information
+
+2. **Feature Requests** 💡
+   - Use GitHub Issues with the "enhancement" label
+   - Describe the use case clearly
+   - Explain expected behavior
+
+3. **Code Contributions** 💻
+   - Bug fixes
+   - New features
+   - Performance improvements
+   - Documentation updates
+
+4. **Documentation** 📚
+   - Fix typos or unclear instructions
+   - Add examples and tutorials
+   - Improve API documentation
+
+5. **Agent Development** 🤖
+   - New specialized agents
+   - Improvements to existing agents
+   - Custom workflow patterns
 
 ---
 
@@ -125,228 +149,392 @@ git checkout -b feature/your-feature-name
 
 ### Python Style Guide
 
-Follow [PEP 8](https://pep8.org/) with these specifics:
-
-- **Indentation**: 4 spaces (no tabs)
-- **Line length**: Max 100 characters
-- **Imports**: Grouped (standard library, third-party, local)
-- **Docstrings**: Google style for functions and classes
-
-Example:
+We follow **PEP 8** with some modifications:
 
 ```python
-def generate_slide(title: str, content: list, style: str = "professional") -> dict:
+# Good: Clear function names with type hints
+def generate_slide_outline(
+    topic: str,
+    audience: str,
+    duration: int
+) -> dict[str, Any]:
     """
-    Generate a presentation slide with specified content.
+    Generate a structured outline for presentation slides.
     
     Args:
-        title: Slide title text
-        content: List of content items to include
-        style: Design style (professional, creative, minimal)
-    
+        topic: Main presentation topic
+        audience: Target audience description
+        duration: Presentation duration in minutes
+        
     Returns:
-        Dictionary containing slide configuration
-    
+        Dictionary containing slide structure and timing
+        
     Raises:
-        ValueError: If style is not recognized
+        ValueError: If duration is negative or zero
     """
-    if style not in ["professional", "creative", "minimal"]:
-        raise ValueError(f"Unknown style: {style}")
-    
-    return {
-        "title": title,
-        "content": content,
-        "style": style
-    }
+    pass
+
+# Bad: Unclear names, no type hints, no docstring
+def gen(t, a, d):
+    pass
 ```
 
-### YAML Configuration
+### Code Formatting
 
-- **Indentation**: 2 spaces
-- **Comments**: Use for complex sections
-- **Structure**: Match existing agent configs
+We use automated formatters:
 
-Example:
+- **Black** for code formatting
+- **isort** for import sorting
+- **Flake8** for linting
+- **mypy** for type checking
 
-```yaml
-agent:
-  name: "Example Agent"
-  description: |
-    Multi-line description
-    of agent purpose
-  
-  capabilities:
-    - capability_one
-    - capability_two
-  
-  tools:
-    - name: "tool_name"
-      required: true
+```bash
+# Format code automatically
+black ai_presentation_system/
+isort ai_presentation_system/
+
+# Check for issues
+flake8 ai_presentation_system/
+mypy ai_presentation_system/
 ```
 
-### Documentation
+### Naming Conventions
 
-- **README updates**: For new features or breaking changes
-- **Inline comments**: For complex logic only
-- **Docstrings**: For all public functions/classes
-- **Examples**: Include usage examples for new features
+| Type | Convention | Example |
+|------|------------|---------|
+| Classes | PascalCase | `ContentStrategist`, `ChartDesigner` |
+| Functions | snake_case | `generate_outline()`, `validate_config()` |
+| Constants | UPPER_SNAKE_CASE | `MAX_SLIDES`, `DEFAULT_STYLE` |
+| Private methods | _leading_underscore | `_internal_helper()` |
+| Agents | Agent suffix | `ScenarioIntelligenceAgent` |
 
 ---
 
-## 💬 Commit Guidelines
+## 🧪 Testing Requirements
 
-### Commit Message Format
+### Test Structure
 
 ```
-<type>(<scope>): <subject>
+tests/
+├── test_agents/
+│   ├── test_scenario_intelligence.py
+│   ├── test_content_strategist.py
+│   └── ...
+├── test_workflows/
+│   ├── test_standard_workflow.py
+│   └── test_fast_workflow.py
+├── test_integration/
+│   └── test_end_to_end.py
+└── fixtures/
+    └── sample_presentations.py
+```
+
+### Writing Tests
+
+```python
+import pytest
+from ai_presentation_system.agents import ContentStrategist
+
+class TestContentStrategist:
+    """Test suite for Content Strategist agent."""
+    
+    @pytest.fixture
+    def agent(self):
+        """Create agent instance for testing."""
+        return ContentStrategist(config={"style": "business"})
+    
+    def test_outline_generation(self, agent):
+        """Test basic outline generation."""
+        result = agent.generate_outline(
+            topic="Digital Transformation",
+            audience="Executives",
+            duration=30
+        )
+        
+        assert "slides" in result
+        assert len(result["slides"]) > 0
+        assert result["total_duration"] <= 30
+    
+    def test_invalid_duration_raises_error(self, agent):
+        """Test that negative duration raises ValueError."""
+        with pytest.raises(ValueError):
+            agent.generate_outline(
+                topic="Test",
+                audience="Test",
+                duration=-5
+            )
+```
+
+### Test Coverage Requirements
+
+- **Minimum coverage**: 80% for new code
+- **Critical paths**: 100% coverage required
+- **Agent implementations**: Each agent must have dedicated test suite
+
+---
+
+## 🔄 Pull Request Process
+
+### 1. Create a Feature Branch
+
+```bash
+# Update your local main branch
+git checkout main
+git pull upstream main
+
+# Create feature branch
+git checkout -b feature/your-feature-name
+```
+
+### Branch Naming Convention
+
+- `feature/` - New features
+- `fix/` - Bug fixes
+- `docs/` - Documentation updates
+- `refactor/` - Code refactoring
+- `test/` - Test improvements
+
+Examples:
+- `feature/add-video-support`
+- `fix/citation-formatting-bug`
+- `docs/update-quickstart-guide`
+
+### 2. Make Your Changes
+
+```bash
+# Make changes
+# Add tests
+# Update documentation
+
+# Run tests locally
+pytest
+
+# Run linters
+black .
+flake8 .
+```
+
+### 3. Commit Your Changes
+
+Use clear, descriptive commit messages:
+
+```bash
+# Good commit messages
+git commit -m "feat: Add video integration to PowerPoint Generator"
+git commit -m "fix: Correct citation formatting in APA style"
+git commit -m "docs: Update API reference for Chart Designer"
+
+# Bad commit messages
+git commit -m "updates"
+git commit -m "fix bug"
+git commit -m "changes"
+```
+
+**Commit Message Format:**
+```
+<type>: <subject>
 
 <body>
 
 <footer>
 ```
 
-#### Types
-
+**Types:**
 - `feat`: New feature
 - `fix`: Bug fix
-- `docs`: Documentation changes
-- `style`: Code style changes (formatting, no logic change)
-- `refactor`: Code refactoring
-- `test`: Adding or updating tests
-- `chore`: Maintenance tasks
+- `docs`: Documentation
+- `style`: Formatting
+- `refactor`: Code restructuring
+- `test`: Tests
+- `chore`: Maintenance
 
-#### Examples
-
-```bash
-feat(chart-designer): Add waterfall chart support
-
-- Implement waterfall chart generation
-- Add color coding for positive/negative values
-- Include data validation for waterfall format
-
-Closes #42
-
----
-
-fix(orchestrator): Handle empty presentation requests
-
-Previously crashed when description was empty.
-Now returns helpful error message.
-
-Fixes #38
-
----
-
-docs(readme): Update installation instructions
-
-- Add Python version requirement
-- Clarify Nebula platform setup
-- Fix broken links
-```
-
----
-
-## 🔄 Pull Request Process
-
-### Before Submitting
-
-1. **Test your changes** - Ensure everything works
-2. **Update documentation** - Reflect your changes in docs
-3. **Follow style guide** - Code matches project standards
-4. **Commit message** - Clear and descriptive
-5. **Rebase on main** - Ensure clean history
-
-### Submission Steps
+### 4. Push and Create PR
 
 ```bash
-# 1. Ensure you're on your feature branch
-git checkout feature/your-feature-name
-
-# 2. Pull latest changes from upstream
-git fetch upstream
-git rebase upstream/main
-
-# 3. Push to your fork
+# Push to your fork
 git push origin feature/your-feature-name
 
-# 4. Create Pull Request on GitHub
-# - Clear title describing the change
-# - Description explaining what and why
-# - Link to related issues
+# Go to GitHub and create Pull Request
 ```
 
-### PR Template
-
-Your PR description should include:
+### 5. PR Description Template
 
 ```markdown
 ## Description
-Brief description of changes
+Brief description of what this PR does.
 
 ## Type of Change
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
+- [ ] Bug fix (non-breaking change fixing an issue)
+- [ ] New feature (non-breaking change adding functionality)
+- [ ] Breaking change (fix or feature causing existing functionality to change)
 - [ ] Documentation update
 
 ## Testing
-How was this tested?
+Describe the tests you ran and how to reproduce them.
 
 ## Checklist
-- [ ] Code follows style guide
-- [ ] Self-review completed
-- [ ] Documentation updated
-- [ ] Tests added/updated
-- [ ] All tests pass
+- [ ] My code follows the project's style guidelines
+- [ ] I have performed a self-review
+- [ ] I have commented my code, particularly in hard-to-understand areas
+- [ ] I have updated the documentation
+- [ ] My changes generate no new warnings
+- [ ] I have added tests that prove my fix is effective or feature works
+- [ ] New and existing unit tests pass locally
+- [ ] Any dependent changes have been merged
+
+## Screenshots (if applicable)
+Add screenshots to help explain your changes.
+
+## Related Issues
+Closes #123
+Related to #456
 ```
 
-### Review Process
+### 6. Review Process
 
-1. **Automated checks** - GitHub Actions must pass
-2. **Maintainer review** - At least one approval required
-3. **Discussion** - Address feedback and questions
-4. **Approval** - Maintainer approves changes
-5. **Merge** - Squash and merge to main
-
----
-
-## 🎓 Learning Resources
-
-### Project Architecture
-- [Agent Design Guide](./code/agents/implementation-guide.md)
-- [Usage Examples](./code/agents/usage-examples.md)
-- [Quality Framework](./docs/quality-assurance.md)
-
-### Nebula Platform
-- [Nebula Documentation](https://docs.nebula.gg)
-- [Multi-Agent Systems](https://docs.nebula.gg/agents)
-- [API Reference](https://docs.nebula.gg/api)
-
-### Python-pptx
-- [Official Docs](https://python-pptx.readthedocs.io/)
-- [Tutorial](https://python-pptx.readthedocs.io/en/latest/user/quickstart.html)
+- Maintainers will review your PR within 3-5 business days
+- Address any requested changes
+- Keep your branch up to date with main
+- Be responsive to feedback
 
 ---
 
-## ❓ Questions?
+## 🤖 Agent Development Guidelines
 
-- **GitHub Issues** - For bugs and feature requests
-- **Discussions** - For questions and ideas
-- **Email** - glen200392@gmail.com for private inquiries
+### Creating a New Agent
+
+1. **Define Agent Purpose**
+   ```yaml
+   # agents_config.yaml
+   - id: "your-new-agent"
+     name: "Your New Agent Name"
+     role: "Specific role description"
+     expertise:
+       - "Capability 1"
+       - "Capability 2"
+   ```
+
+2. **Implement Agent Class**
+   ```python
+   # ai_presentation_system/agents/your_new_agent.py
+   
+   from .base_agent import BaseAgent
+   
+   class YourNewAgent(BaseAgent):
+       """
+       Your agent description.
+       
+       This agent specializes in [specific task] by [methodology].
+       """
+       
+       def __init__(self, config: dict):
+           super().__init__(config)
+           self.setup_capabilities()
+       
+       def process(self, input_data: dict) -> dict:
+           """Main processing method."""
+           pass
+   ```
+
+3. **Add Tests**
+   ```python
+   # tests/test_agents/test_your_new_agent.py
+   
+   def test_your_new_agent():
+       agent = YourNewAgent(config={})
+       result = agent.process({"test": "data"})
+       assert result["status"] == "success"
+   ```
+
+4. **Document the Agent**
+   ```markdown
+   # docs/agents/your_new_agent.md
+   
+   # Your New Agent
+   
+   ## Overview
+   ## Capabilities
+   ## API Reference
+   ## Examples
+   ```
+
+### Agent Quality Checklist
+
+- [ ] Clear, single-responsibility purpose
+- [ ] Comprehensive docstrings
+- [ ] Type hints for all methods
+- [ ] Error handling with meaningful messages
+- [ ] Unit tests covering main scenarios
+- [ ] Integration tests with other agents
+- [ ] Documentation with examples
+- [ ] Performance benchmarks
 
 ---
 
-## 🙏 Thank You!
+## 📚 Documentation Standards
 
-Your contributions make this project better for everyone. Whether it's:
+### Docstring Format (Google Style)
 
-- 🐛 Reporting a bug
-- 💡 Suggesting an enhancement
-- 📝 Improving documentation
-- 💻 Contributing code
-
-Every contribution is valued and appreciated! ⭐
+```python
+def generate_presentation(
+    topic: str,
+    audience: str,
+    style: str = "business_professional",
+    duration: int = 30
+) -> PresentationResult:
+    """
+    Generate a complete presentation from requirements.
+    
+    This function orchestrates all agents to create a presentation
+    that meets the specified requirements and quality standards.
+    
+    Args:
+        topic: Main presentation topic or title
+        audience: Target audience description (e.g., "C-Suite Executives")
+        style: Design style to apply, defaults to "business_professional"
+        duration: Target duration in minutes, defaults to 30
+        
+    Returns:
+        PresentationResult object containing:
+            - pptx_file: Path to generated .pptx file
+            - quality_score: Overall quality score (0-100)
+            - metadata: Generation metadata and statistics
+            
+    Raises:
+        ValueError: If duration is negative or style is invalid
+        GenerationError: If presentation generation fails
+        
+    Example:
+        >>> result = generate_presentation(
+        ...     topic="Digital Strategy 2026",
+        ...     audience="Board of Directors",
+        ...     duration=45
+        ... )
+        >>> print(f"Quality: {result.quality_score}/100")
+        Quality: 98/100
+    """
+    pass
+```
 
 ---
 
-*Happy Contributing!* 🚀
+## ❓ Questions or Need Help?
+
+- **General questions**: [GitHub Discussions](https://github.com/glen200392/ai-presentation-system/discussions)
+- **Bug reports**: [GitHub Issues](https://github.com/glen200392/ai-presentation-system/issues)
+- **Direct contact**: glen200392@gmail.com
+
+---
+
+## 🎉 Recognition
+
+Contributors will be:
+- Listed in [CONTRIBUTORS.md](CONTRIBUTORS.md)
+- Mentioned in release notes
+- Credited in documentation they create
+
+---
+
+Thank you for contributing to AI Presentation System! 🙏
+
+*Last Updated: 2026-02-02*
