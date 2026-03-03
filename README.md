@@ -119,12 +119,7 @@ Transform your ideas into professional, audience-focused presentations in minute
 - **Expertise**: APA 7, MLA 9, Chicago 17, IEEE formatting
 - **Output**: Formatted citations, "Sources" slide, BibTeX export
 
-### 8. **Narrative Optimizer** 🎭
-- **Role**: Story flow & engagement specialist
-- **Expertise**: Emotional arc analysis, engagement curves, transition quality
-- **Output**: Restructuring recommendations, pacing optimization
-
-### 9. **Quality Assurance** ✅
+### 8. **Quality Assurance** ✅
 - **Role**: Pre-delivery validation specialist
 - **Expertise**: Data accuracy, visual consistency, accessibility compliance
 - **Output**: Quality reports with severity-rated issues
