@@ -9,7 +9,7 @@
 ### 1. System Architecture Diagram
 ![System Architecture](./images/system_architecture_diagram.png)
 
-**說明**: 完整的系統架構，展示 7 個 Agents 的協作關係、工具包層、輸出層。
+**說明**: 完整的系統架構，展示 8 個 Agents 的協作關係、工具包層、輸出層。
 
 **關鍵組件**:
 - User Interface Layer
@@ -39,10 +39,10 @@
 ### 3. Agent Collaboration Network
 ![Agent Collaboration](./images/agent_collaboration_diagram.png)
 
-**說明**: 7 個 Agents 的協作網絡拓撲圖。
+**說明**: 8 個 Agents 的協作網絡拓撲圖。
 
 **協作統計**:
-- 7 個 Agents
+- 8 個 Agents
 - 100% 執行覆蓋率
 - 12 分鐘總時間
 - v2.0 改進：Chart Designer 啟用 (+3 圖表)、Agent 日誌啟用 (100% 透明)
@@ -127,7 +127,7 @@ Orchestrator (主控)
 - 文件儲存（.pptx, PNG）
 
 ### 擴展性
-- 當前：7 個 Agents
+- 當前：8 個 Agents
 - 未來可擴展至 10+ Agents（不同產業模板）
 - 支援並行執行（Phase 1 的 3 個 Agents 可並行）
 

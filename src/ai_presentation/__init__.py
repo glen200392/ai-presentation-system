@@ -1,7 +1,8 @@
-"""AI Presentation System package."""
+"""AI Presentation System — 8-agent collaborative presentation generation."""
 
-from .orchestrator import PresentationOrchestrator
+from .agents.document_ingestion_agent import DocumentIngestionAgent
 from .content_generator import ContentGenerator
+from .orchestrator import PresentationOrchestrator
 
-__version__ = "1.0.0"
-__all__ = ["PresentationOrchestrator", "ContentGenerator"]
+__version__ = "2.0.0"
+__all__ = ["PresentationOrchestrator", "ContentGenerator", "DocumentIngestionAgent"]

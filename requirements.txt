@@ -1,4 +1,4 @@
-requirements.txt# AI Presentation System - Python Dependencies
+# AI Presentation System - Python Dependencies
 # Core Dependencies
 python-pptx>=0.6.21
 PyYAML>=6.0
@@ -12,9 +12,24 @@ requests>=2.31.0
 numpy>=1.24.0
 pandas>=2.0.0
 
+# Web Framework
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+
+# Web UI
+streamlit>=1.28.0
+
+# Document Ingestion
+PyPDF2>=3.0.0
+python-docx>=0.8.11
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
 # Testing
 pytest>=7.0.0
+pytest-asyncio>=0.21.0
 pytest-cov>=4.0.0
+httpx>=0.24.0
 
 # Development
 black>=23.0.0

@@ -10,7 +10,7 @@ setup(
       version="1.0.0",
       author="Glen Chen",
       author_email="glen200392@example.com",
-      description="AI-powered presentation generation system with 6-agent collaboration",
+      description="AI-powered presentation generation system with 8-agent collaboration",
       long_description=long_description,
       long_description_content_type="text/markdown",
       url="https://github.com/glen200392/ai-presentation-system",
