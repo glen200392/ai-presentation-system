@@ -21,7 +21,9 @@ class ResearchAnalystAgent(BaseAgent):
         topic = input_data.get("topic", "")
         return await self.conduct_research(topic, input_data)
 
-    async def conduct_research(self, topic: str, requirements: Dict[str, Any]) -> Dict[str, Any]:
+    async def conduct_research(
+        self, topic: str, requirements: Dict[str, Any]
+    ) -> Dict[str, Any]:
         """
         Conduct research on the given topic.
 

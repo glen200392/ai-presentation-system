@@ -8,13 +8,47 @@ logger = logging.getLogger(__name__)
 
 _DEFAULT_STRUCTURES = {
     "pitch_deck": ["Problem", "Solution", "Market", "Business Model", "Team", "Ask"],
-    "business_proposal": ["Executive Summary", "Background", "Proposal", "Benefits", "Timeline", "Next Steps"],
-    "board_report": ["Executive Summary", "KPIs", "Financials", "Strategic Updates", "Risks", "Recommendations"],
+    "business_proposal": [
+        "Executive Summary",
+        "Background",
+        "Proposal",
+        "Benefits",
+        "Timeline",
+        "Next Steps",
+    ],
+    "board_report": [
+        "Executive Summary",
+        "KPIs",
+        "Financials",
+        "Strategic Updates",
+        "Risks",
+        "Recommendations",
+    ],
     "qbr": ["Quarter Recap", "KPI Review", "Wins", "Challenges", "Q+1 Plan"],
-    "product_launch": ["Vision", "Product Overview", "Features", "Market Fit", "GTM", "Roadmap"],
-    "training": ["Objectives", "Content Modules", "Activities", "Assessment", "Resources"],
+    "product_launch": [
+        "Vision",
+        "Product Overview",
+        "Features",
+        "Market Fit",
+        "GTM",
+        "Roadmap",
+    ],
+    "training": [
+        "Objectives",
+        "Content Modules",
+        "Activities",
+        "Assessment",
+        "Resources",
+    ],
     "sales_pitch": ["Hook", "Pain Points", "Solution", "Proof", "Pricing", "CTA"],
-    "strategy": ["Context", "Vision", "Goals", "Initiatives", "Resources", "Milestones"],
+    "strategy": [
+        "Context",
+        "Vision",
+        "Goals",
+        "Initiatives",
+        "Resources",
+        "Milestones",
+    ],
 }
 
 
@@ -44,7 +78,9 @@ class ScenarioIntelligenceAgent(BaseAgent):
         topic = requirements.get("topic", "")
         design_style = requirements.get("design_style", "business_professional")
 
-        structure = _DEFAULT_STRUCTURES.get(scenario_type, _DEFAULT_STRUCTURES["strategy"])
+        structure = _DEFAULT_STRUCTURES.get(
+            scenario_type, _DEFAULT_STRUCTURES["strategy"]
+        )
 
         self.log_info(f"Analyzed scenario: {scenario_type} for topic: {topic}")
 

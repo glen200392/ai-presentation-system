@@ -32,7 +32,7 @@ class BaseAgent(ABC):
                 return await self.execute(input_data)
             except Exception as e:
                 last_error = e
-                wait = 2 ** attempt
+                wait = 2**attempt
                 logger.warning(
                     f"[{self.name}] attempt {attempt + 1}/{max_retries} failed: {e}; "
                     f"retrying in {wait}s"
@@ -56,4 +56,6 @@ class BaseAgent(ABC):
     # Legacy sync stub - raises NotImplementedError to guide subclasses to use execute()
     def process(self, *args, **kwargs):
         """Legacy processing method - use execute() instead."""
-        raise NotImplementedError("Use the async execute() method instead of process().")
+        raise NotImplementedError(
+            "Use the async execute() method instead of process()."
+        )

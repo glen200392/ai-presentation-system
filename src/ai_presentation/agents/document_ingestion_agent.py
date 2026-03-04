@@ -70,7 +70,9 @@ class DocumentIngestionAgent(BaseAgent):
             for tag in soup(["script", "style", "nav", "footer", "header"]):
                 tag.decompose()
 
-            title = soup.title.string.strip() if soup.title and soup.title.string else url
+            title = (
+                soup.title.string.strip() if soup.title and soup.title.string else url
+            )
             raw_text = soup.get_text(separator="\n", strip=True)
 
             self.log_info(f"Ingested URL: {url} ({_count_words(raw_text)} words)")
@@ -117,13 +119,17 @@ class DocumentIngestionAgent(BaseAgent):
             with open(path, "r", encoding="utf-8") as f:
                 raw_text = f.read()
             title = os.path.basename(path)
-            self.log_info(f"Ingested text file: {path} ({_count_words(raw_text)} words)")
+            self.log_info(
+                f"Ingested text file: {path} ({_count_words(raw_text)} words)"
+            )
             return self._build_result("text", raw_text, title)
         except Exception as e:
             self.log_error(f"Failed to ingest file {path}: {e}")
             return self._empty_result("text")
 
-    def _build_result(self, source_type: str, raw_text: str, title: str) -> Dict[str, Any]:
+    def _build_result(
+        self, source_type: str, raw_text: str, title: str
+    ) -> Dict[str, Any]:
         return {
             "source_type": source_type,
             "raw_text": raw_text,

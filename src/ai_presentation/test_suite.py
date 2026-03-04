@@ -25,7 +25,7 @@ class TestPresentationOrchestrator:
     async def test_orchestrator_initialization(self, orchestrator):
         """Test orchestrator initializes correctly."""
         assert orchestrator is not None
-        assert hasattr(orchestrator, 'scenario_agent')
+        assert hasattr(orchestrator, "scenario_agent")
 
     @pytest.mark.asyncio
     async def test_generate_presentation(self, orchestrator):

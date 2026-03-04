@@ -24,7 +24,9 @@ st.caption("Generate professional presentations powered by 8 specialized AI agen
 with st.form("presentation_form"):
     topic = st.text_input("Topic *", placeholder="e.g. Digital Transformation Strategy")
     audience = st.text_input("Audience *", placeholder="e.g. C-Suite Executives")
-    duration = st.number_input("Duration (minutes)", min_value=5, max_value=120, value=20, step=5)
+    duration = st.number_input(
+        "Duration (minutes)", min_value=5, max_value=120, value=20, step=5
+    )
 
     design_style = st.selectbox(
         "Design Style",
@@ -85,7 +87,9 @@ if submitted:
                     "duration": duration,
                 },
                 "design": {"style": design_style},
-                "key_messages": [m.strip() for m in key_messages.splitlines() if m.strip()],
+                "key_messages": [
+                    m.strip() for m in key_messages.splitlines() if m.strip()
+                ],
             }
 
             try:
@@ -106,6 +110,8 @@ if submitted:
                     with st.expander("View Details"):
                         st.json(result)
                 else:
-                    st.error(f"Generation failed: {result.get('error', 'Unknown error')}")
+                    st.error(
+                        f"Generation failed: {result.get('error', 'Unknown error')}"
+                    )
             except Exception as exc:
                 st.error(f"An error occurred: {exc}")

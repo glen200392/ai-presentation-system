@@ -43,7 +43,11 @@ class VisualDesignerAgent(BaseAgent):
         return {
             "style": style,
             "color_palette": palette,
-            "typography": {"heading": "Calibri Bold", "body": "Calibri", "accent": "Calibri Light"},
+            "typography": {
+                "heading": "Calibri Bold",
+                "body": "Calibri",
+                "accent": "Calibri Light",
+            },
             "layout_templates": [
                 {"name": "title_slide", "columns": 1},
                 {"name": "content_slide", "columns": 2},

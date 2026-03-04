@@ -31,16 +31,23 @@ class ChartDesignerAgent(BaseAgent):
         charts: List[Dict[str, Any]] = []
 
         for spec in raw_charts:
-            charts.append({
-                "type": spec.get("type", "bar"),
-                "title": spec.get("title", "Chart"),
-                "data": spec.get("data", {}),
-                "style": spec.get("style", "business_professional"),
-            })
+            charts.append(
+                {
+                    "type": spec.get("type", "bar"),
+                    "title": spec.get("title", "Chart"),
+                    "data": spec.get("data", {}),
+                    "style": spec.get("style", "business_professional"),
+                }
+            )
 
         if not charts:
             charts = [
-                {"type": "bar", "title": "Overview", "data": {}, "style": "business_professional"}
+                {
+                    "type": "bar",
+                    "title": "Overview",
+                    "data": {},
+                    "style": "business_professional",
+                }
             ]
 
         self.log_info(f"Created {len(charts)} chart(s)")

@@ -29,7 +29,9 @@ DEFAULT_CHART_RESULT = {
 }
 
 
-async def _run_with_retry(coro_fn, max_retries: int = MAX_RETRIES, timeout: int = AGENT_TIMEOUT):
+async def _run_with_retry(
+    coro_fn, max_retries: int = MAX_RETRIES, timeout: int = AGENT_TIMEOUT
+):
     """Run a coroutine with retry and timeout logic."""
     last_error = None
     for attempt in range(max_retries + 1):
@@ -40,9 +42,11 @@ async def _run_with_retry(coro_fn, max_retries: int = MAX_RETRIES, timeout: int 
             logger.warning(f"Agent timed out (attempt {attempt + 1}/{max_retries + 1})")
         except Exception as e:
             last_error = e
-            logger.warning(f"Agent failed (attempt {attempt + 1}/{max_retries + 1}): {e}")
+            logger.warning(
+                f"Agent failed (attempt {attempt + 1}/{max_retries + 1}): {e}"
+            )
         if attempt < max_retries:
-            await asyncio.sleep(2 ** attempt)
+            await asyncio.sleep(2**attempt)
     raise last_error
 
 
@@ -85,6 +89,7 @@ class PresentationOrchestrator:
         if document_path or document_url:
             try:
                 from .agents.document_ingestion_agent import DocumentIngestionAgent
+
                 ingestion_agent = DocumentIngestionAgent()
                 source = document_path or document_url
                 ingestion_result = await _run_with_retry(
@@ -130,19 +135,21 @@ class PresentationOrchestrator:
                 )
                 logger.info("Visual design completed")
             except Exception as e:
-                logger.warning(f"Visual design failed after retries, using defaults: {e}")
+                logger.warning(
+                    f"Visual design failed after retries, using defaults: {e}"
+                )
                 design = DEFAULT_VISUAL_RESULT
 
             # Step 5: Create charts (non-critical - graceful degradation)
             try:
                 charts = await _run_with_retry(
-                    lambda: self.chart_agent.create_charts(
-                        requirements.get("data", {})
-                    )
+                    lambda: self.chart_agent.create_charts(requirements.get("data", {}))
                 )
                 logger.info("Charts created")
             except Exception as e:
-                logger.warning(f"Chart creation failed after retries, using defaults: {e}")
+                logger.warning(
+                    f"Chart creation failed after retries, using defaults: {e}"
+                )
                 charts = DEFAULT_CHART_RESULT
 
             # Step 6: Quality assurance (critical)
