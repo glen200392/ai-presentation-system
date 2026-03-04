@@ -1,7 +1,7 @@
 """Content generation module for creating presentation slides and content."""
 
 import logging
-from typing import Dict, List, Any, Optional
+from typing import Dict, List, Any
 
 logger = logging.getLogger(__name__)
 

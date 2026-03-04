@@ -1,15 +1,9 @@
 """Comprehensive test suite for AI Presentation System."""
 
-import sys
-import os
 import pytest
-import asyncio
-from unittest.mock import Mock, AsyncMock
-
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../.."))
 
 from ai_presentation.orchestrator import PresentationOrchestrator
-from ai_presentation.agents import BaseAgent, ScenarioIntelligenceAgent
+from ai_presentation.agents import ScenarioIntelligenceAgent
 from ai_presentation.content_generator import ContentGenerator
 
 
