@@ -53,7 +53,7 @@ class BaseAgent(ABC):
         """Log error message."""
         logger.error(f"[{self.name}] {message}")
 
-    # Legacy sync stub for backward compatibility
+    # Legacy sync stub - raises NotImplementedError to guide subclasses to use execute()
     def process(self, *args, **kwargs):
-        """Legacy processing method - prefer execute()."""
-        raise NotImplementedError("Subclass must implement process() method")
+        """Legacy processing method - use execute() instead."""
+        raise NotImplementedError("Use the async execute() method instead of process().")

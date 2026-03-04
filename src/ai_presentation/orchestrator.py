@@ -28,11 +28,6 @@ DEFAULT_CHART_RESULT = {
     "charts": [],
 }
 
-DEFAULT_CITATION_RESULT = {
-    "citations": [],
-    "formatted": [],
-}
-
 
 async def _run_with_retry(coro_fn, max_retries: int = MAX_RETRIES, timeout: int = AGENT_TIMEOUT):
     """Run a coroutine with retry and timeout logic."""
@@ -65,7 +60,7 @@ class PresentationOrchestrator:
         self.visual_agent = VisualDesignerAgent()
         self.chart_agent = ChartDesignerAgent()
         self.qa_agent = QualityAssuranceAgent()
-        logger.info("PresentationOrchestrator initialized with 8 agents")
+        logger.info("PresentationOrchestrator initialized")
 
     async def generate_presentation(
         self,

@@ -2,7 +2,6 @@
 """Streamlit Web UI for AI Presentation System."""
 
 import asyncio
-import io
 import sys
 import os
 
@@ -99,16 +98,11 @@ if submitted:
                     score = quality.get("quality_score", "N/A")
                     st.metric("Quality Score", f"{score}/100")
 
-                    # Provide a placeholder .pptx download
-                    # (Real pptx generation would be wired here via presentation_generator)
-                    placeholder_bytes = io.BytesIO(b"")
-                    st.download_button(
-                        label="⬇️ Download Presentation (.pptx)",
-                        data=placeholder_bytes,
-                        file_name=f"{topic.replace(' ', '_')}.pptx",
-                        mime="application/vnd.openxmlformats-officedocument.presentationml.presentation",
+                    # Provide a placeholder .pptx download (real generation wired via presentation_generator)
+                    st.info(
+                        "💡 .pptx generation requires a configured presentation generator. "
+                        "The analysis results are shown below."
                     )
-
                     with st.expander("View Details"):
                         st.json(result)
                 else:
