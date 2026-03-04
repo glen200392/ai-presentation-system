@@ -18,7 +18,7 @@
       ],
       "key_updates_v2": [
         "新增 Agent Delegation 工具",
-        "強制呼叫所有 7 個 Agents",
+        "強制呼叫所有 8 個 Agents",
         "記錄 Agent 執行日誌",
         "演講者備註嵌入 .pptx"
       ],
@@ -178,8 +178,16 @@
   },
   "usage": {
     "quick_start": "delegate(agent_id='agt_0697a0226eaf7dc1800093eb8943c2da', task='生成關於[主題]的簡報，受眾為[受眾]，風格為[風格]')",
-    "supported_formats": [".pptx"],
-    "supported_styles": ["Business Professional", "Tech Innovation", "Creative Energy", "Academic Research", "Minimal Modern"],
+    "supported_formats": [
+      ".pptx"
+    ],
+    "supported_styles": [
+      "Business Professional",
+      "Tech Innovation",
+      "Creative Energy",
+      "Academic Research",
+      "Minimal Modern"
+    ],
     "output_files": [
       ".pptx 簡報檔案",
       "Agent 執行日誌",
@@ -188,8 +196,17 @@
     ]
   },
   "technical_requirements": {
-    "python_packages": ["python-pptx", "matplotlib", "seaborn", "pandas", "numpy"],
-    "api_access": ["Web Search", "File Management"],
+    "python_packages": [
+      "python-pptx",
+      "matplotlib",
+      "seaborn",
+      "pandas",
+      "numpy"
+    ],
+    "api_access": [
+      "Web Search",
+      "File Management"
+    ],
     "minimum_execution_time": "10-15 分鐘"
   }
 }
