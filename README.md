@@ -66,9 +66,9 @@ Transform your ideas into professional, audience-focused presentations in minute
         │            │            │
         ▼            ▼            ▼
 ┌──────────┐  ┌──────────┐  ┌──────────┐
-│ Agent 7  │  │ Agent 8  │  │ Agent 9  │
-│ Citation │  │ Narrative│  │ Quality  │
-│ Manager  │  │ Optimizer│  │ Assurance│
+│ Agent 7  │  │ Agent 8  │  │          │
+│ Citation │  │ Quality  │  │          │
+│ Manager  │  │ Assurance│  │          │
 └────┬─────┘  └────┬─────┘  └────┬─────┘
      │            │            │
      └────────────┼────────────┘
@@ -94,40 +94,35 @@ Transform your ideas into professional, audience-focused presentations in minute
 - **Expertise**: Narrative frameworks (Problem-Solution, Hero's Journey, Data-Driven, Before-After-Bridge, What-So What-Now What)
 - **Output**: Slide-by-slide outlines, speaker notes, timing markers
 
-### 3. **Visual Designer** 🎨
-- **Role**: Brand & aesthetic specialist
-- **Expertise**: 5 design styles, color theory, WCAG accessibility, typography
-- **Output**: Style guides, color palettes, layout templates
-
-### 4. **Chart Designer** 📊
-- **Role**: Data visualization expert
-- **Expertise**: 8 chart types (bar, line, pie, scatter, heatmap, treemap, waterfall, combo)
-- **Output**: Publication-ready charts with consistent styling
-
-### 5. **Research Analyst** 🔍
-- **Role**: Data & evidence gatherer
-- **Expertise**: Academic literature, industry reports, statistics, fact-checking
-- **Output**: Verified data, source recommendations, trend analysis
-
-### 6. **PowerPoint Generator** 🏗️
-- **Role**: Technical assembler & .pptx creator
-- **Expertise**: API integration, layout engine, animation suggestions
-- **Output**: Editable .pptx files ready for download
-
-### 7. **Citation Manager** 📚
-- **Role**: Reference & attribution specialist
-- **Expertise**: APA 7, MLA 9, Chicago 17, IEEE formatting
-- **Output**: Formatted citations, "Sources" slide, BibTeX export
-
-### 8. **Narrative Optimizer** 🎭
+### 3. **Narrative Optimizer** 🎭
 - **Role**: Story flow & engagement specialist
 - **Expertise**: Emotional arc analysis, engagement curves, transition quality
 - **Output**: Restructuring recommendations, pacing optimization
 
-### 9. **Quality Assurance** ✅
+### 4. **Visual Designer** 🎨
+- **Role**: Brand & aesthetic specialist
+- **Expertise**: 5 design styles, color theory, WCAG accessibility, typography
+- **Output**: Style guides, color palettes, layout templates
+
+### 5. **Chart Designer** 📊
+- **Role**: Data visualization expert
+- **Expertise**: 8 chart types (bar, line, pie, scatter, heatmap, treemap, waterfall, combo)
+- **Output**: Publication-ready charts with consistent styling
+
+### 6. **Citation Manager** 📚
+- **Role**: Reference & attribution specialist
+- **Expertise**: APA 7, MLA 9, Chicago 17, IEEE formatting
+- **Output**: Formatted citations, "Sources" slide, BibTeX export
+
+### 7. **Quality Assurance** ✅
 - **Role**: Pre-delivery validation specialist
 - **Expertise**: Data accuracy, visual consistency, accessibility compliance
 - **Output**: Quality reports with severity-rated issues
+
+### 8. **PowerPoint Generator** 🏗️
+- **Role**: Technical assembler & .pptx creator
+- **Expertise**: API integration, layout engine, animation suggestions
+- **Output**: Editable .pptx files ready for download
 
 ---
 

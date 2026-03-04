@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.1] - 2026-03-03
+
+### Fixed
+- Fix agent count inconsistency across all documentation and code files. Canonical count: 8 agents.
+
+---
+
 ## [2.0.0] - 2026-01-30
 
 ### Major Release - System Optimization
