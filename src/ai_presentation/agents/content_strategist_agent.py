@@ -34,7 +34,12 @@ class ContentStrategistAgent(BaseAgent):
 
         slides_count = max(5, min(20, duration))
         outline: List[Dict[str, Any]] = [
-            {"slide": i + 1, "title": f"Section {i + 1}", "content": [], "duration_min": 1}
+            {
+                "slide": i + 1,
+                "title": f"Section {i + 1}",
+                "content": [],
+                "duration_min": 1,
+            }
             for i in range(slides_count)
         ]
         if outline:

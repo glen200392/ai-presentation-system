@@ -12,6 +12,7 @@ orchestrator = PresentationOrchestrator()
 
 class PresentationRequest(BaseModel):
     """Request model for presentation generation."""
+
     topic: str
     scenario: Optional[dict] = None
     content: Optional[dict] = None
@@ -19,6 +20,7 @@ class PresentationRequest(BaseModel):
 
 class PresentationResponse(BaseModel):
     """Response model for presentation."""
+
     status: str
     message: str
     data: Optional[dict] = None
@@ -40,11 +42,13 @@ async def health_check():
 async def generate_presentation(request: PresentationRequest):
     """Generate a presentation."""
     try:
-        result = await orchestrator.generate_presentation({
-            "topic": request.topic,
-            "scenario": request.scenario or {},
-            "content": request.content or {},
-        })
+        result = await orchestrator.generate_presentation(
+            {
+                "topic": request.topic,
+                "scenario": request.scenario or {},
+                "content": request.content or {},
+            }
+        )
         return PresentationResponse(
             status="success", message="Presentation generated", data=result
         )
@@ -60,4 +64,5 @@ async def get_version():
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8000)

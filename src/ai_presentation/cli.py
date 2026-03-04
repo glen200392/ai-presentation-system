@@ -24,7 +24,9 @@ def main():
     # Generate command
     generate_parser = subparsers.add_parser("generate", help="Generate a presentation")
     generate_parser.add_argument("--topic", required=True, help="Presentation topic")
-    generate_parser.add_argument("--output", default="output.pptx", help="Output file path")
+    generate_parser.add_argument(
+        "--output", default="output.pptx", help="Output file path"
+    )
 
     # Version command
     subparsers.add_parser("version", help="Show version")
@@ -43,11 +45,13 @@ async def generate_presentation(topic: str, output: str):
     """Generate presentation asynchronously."""
     logger.info(f"Generating presentation for topic: {topic}")
     orchestrator = PresentationOrchestrator()
-    result = await orchestrator.generate_presentation({
-        "topic": topic,
-        "scenario": {"topic": topic},
-        "content": {"topic": topic},
-    })
+    result = await orchestrator.generate_presentation(
+        {
+            "topic": topic,
+            "scenario": {"topic": topic},
+            "content": {"topic": topic},
+        }
+    )
     logger.info(f"Presentation saved to {output}")
     return result
 
