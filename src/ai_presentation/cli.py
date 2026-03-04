@@ -8,7 +8,7 @@ import os
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from ai_presentation.orchestrator import PresentationOrchestrator
+from ai_presentation.orchestrator import PresentationOrchestrator  # noqa: E402
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

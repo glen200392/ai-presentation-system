@@ -1,7 +1,7 @@
 """Quality Assurance Agent for ensuring presentation quality and completeness."""
 
 import logging
-from typing import Dict, List, Optional, Any
+from typing import Dict, Optional, Any
 from .base_agent import BaseAgent
 
 logger = logging.getLogger(__name__)
@@ -33,7 +33,7 @@ class QualityAssuranceAgent(BaseAgent):
         Returns:
             Dictionary with quality metrics and feedback
         """
-        logger.debug(f"Reviewing presentation quality")
+        logger.debug("Reviewing presentation quality")
 
         try:
             # Check content quality

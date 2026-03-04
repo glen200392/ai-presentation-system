@@ -3,7 +3,6 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import Optional
-import asyncio
 from .orchestrator import PresentationOrchestrator
 
 app = FastAPI(title="AI Presentation System", version="2.0.0")
